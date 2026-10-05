@@ -1,0 +1,4078 @@
+/* ==========================================================================
+   SECANGLAB & E-LKPD ETNOSAINS KIMIA
+   Design System: Atelier Etnobotani & Laboratorium Riset Bahan Alam
+   Universitas Negeri Semarang & Kurikulum Merdeka Fase F
+   ========================================================================== */
+
+/* --- ROOT VARIABLES & DESIGN TOKENS --- */
+:root {
+  /* Natural Secang Pigment Palette */
+  --secang-950: #2b060b;
+  --secang-900: #480a11;
+  --secang-850: #5c0d17;
+  --secang-800: #73101d;
+  --secang-700: #8f1525; /* Brazilian Ruby Core */
+  --secang-600: #aa1b2d;
+  --secang-500: #c52439;
+  --secang-400: #dc3e52;
+  --secang-200: #f8c5cc;
+  --secang-100: #fde8eb;
+  --secang-50:  #fff5f6;
+
+  /* Natural Amber Wood & Brass (Kuali Tradisional) */
+  --amber-900: #451a03;
+  --amber-800: #78350f;
+  --amber-700: #92400e;
+  --amber-600: #b45309;
+  --amber-500: #d97706; /* Brazilin Gold/Amber */
+  --amber-400: #f59e0b;
+  --amber-100: #fef3c7;
+  --amber-50:  #fffbeb;
+
+  /* Botanical Earth & Indigo (Mordan & Alam) */
+  --botanical-800: #192e24;
+  --botanical-700: #244335;
+  --botanical-600: #325c49;
+  --botanical-100: #e4efe9;
+
+  /* Paper / Parchment Linen Canvas */
+  --canvas-bg: #faf7f2;       /* Natural warm linen */
+  --surface-card: #ffffff;
+  --surface-paper: #fdfbf7;    /* Subtle warm paper */
+  --surface-subtle: #f5f0e6;   /* Aged archival paper */
+  --border-parchment: #e6ded3;
+  --border-strong: #d5c8b8;
+  --border-gold: #c8a86b;
+
+  /* Editorial Inks */
+  --ink-primary: #211516;     /* Deep warm charcoal */
+  --ink-secondary: #4a383a;   /* Espresso ink */
+  --ink-muted: #7d6b6d;       /* Archival pencil */
+  --ink-faint: #ad9e9f;
+
+  /* Scientific Accents */
+  --accent-science: #1e3a8a;  /* Monochromator Blue */
+  --accent-cyan: #0284c7;
+  --accent-success: #15803d;
+  --accent-warning: #b45309;
+  --accent-danger: #b91c1c;
+
+  /* Shadows (Natural warm shadows, not generic AI drop-shadows) */
+  --shadow-warm-sm: 0 1px 3px rgba(60, 20, 25, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-warm-md: 0 4px 12px -2px rgba(60, 20, 25, 0.07), 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-warm-lg: 0 12px 28px -4px rgba(60, 20, 25, 0.10), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --shadow-warm-xl: 0 20px 38px -6px rgba(60, 20, 25, 0.14), 0 8px 12px rgba(0, 0, 0, 0.05);
+
+  /* Radii (Gentle & refined, not bubbly) */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* Typography Stack: Humanist Academic Serif, Indonesian Modern Sans, Tabular Mono */
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* --- RESET & GLOBAL BASE --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--canvas-bg);
+  color: var(--ink-primary);
+  line-height: 1.65;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-image: 
+    radial-gradient(ellipse at 15% 0%, rgba(143, 21, 37, 0.035) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 100%, rgba(180, 83, 9, 0.03) 0%, transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+  font-feature-settings: 'liga', 'clig', 'kern';
+  color: var(--ink-primary);
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum', 'zero';
+}
+
+/* ==========================================================================
+   SITE HEADER & ACADEMIC TOPBAR
+   ========================================================================== */
+.site-header {
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--border-parchment);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-warm-sm);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Official Academic Top Strip */
+.header-academic-strip {
+  background: var(--secang-950);
+  color: #eed6b3;
+  padding: 0.35rem 2rem;
+  font-size: 0.72rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(200, 168, 107, 0.3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.header-academic-strip .strip-institution {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.header-academic-strip .strip-tag {
+  color: #f7c980;
+  font-weight: 700;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 2.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-parchment);
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.unnes-logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background: #ffffff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-parchment);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.unnes-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-info h1 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--secang-850);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  line-height: 1.15;
+}
+
+.brand-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.22rem 0.65rem;
+  background: var(--secang-50);
+  color: var(--secang-700);
+  border-radius: 4px;
+  border: 1px solid var(--secang-200);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn svg {
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--secang-800) 0%, var(--secang-700) 50%, var(--secang-600) 100%);
+  color: #ffffff;
+  border-color: var(--secang-900);
+  box-shadow: 0 2px 6px rgba(115, 16, 29, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--secang-850) 0%, var(--secang-700) 40%, var(--secang-500) 100%);
+  box-shadow: 0 4px 12px rgba(115, 16, 29, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--ink-secondary);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-subtle);
+  color: var(--ink-primary);
+  border-color: var(--ink-muted);
+}
+
+.btn-outline-amber {
+  background: var(--amber-50);
+  color: var(--amber-900);
+  border-color: var(--amber-500);
+}
+
+.btn-outline-amber:hover {
+  background: var(--amber-100);
+  border-color: var(--amber-700);
+}
+
+.btn-outline-secang {
+  background: var(--secang-50);
+  color: var(--secang-900);
+  border-color: var(--secang-400);
+}
+
+.btn-outline-secang:hover {
+  background: var(--secang-100);
+  border-color: var(--secang-700);
+}
+
+/* Nav Tabs Bar (Artisanal Academic Navigation) */
+.nav-tabs-bar {
+  display: flex;
+  padding: 0 2.25rem;
+  background: var(--surface-card);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border-bottom: 2px solid var(--border-parchment);
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.35rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.nav-tab svg {
+  color: var(--ink-faint);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.nav-tab:hover {
+  color: var(--secang-700);
+  background: var(--surface-subtle);
+}
+
+.nav-tab:hover svg {
+  color: var(--secang-600);
+  transform: translateY(-1px);
+}
+
+.nav-tab.active {
+  color: var(--secang-850);
+  font-weight: 700;
+  border-bottom-color: var(--secang-700);
+  background: var(--surface-paper);
+}
+
+.nav-tab.active svg {
+  color: var(--secang-700);
+}
+
+/* ==========================================================================
+   MAIN CONTENT & HERO BANNER
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 2.25rem;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: tabPaneEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tabPaneEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hero Section (Etnobotani & Cultural Heritage Canvas) */
+.hero-card {
+  background: 
+    linear-gradient(145deg, #32070c 0%, #520b13 40%, #75101e 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-warm-lg);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(200, 168, 107, 0.35);
+}
+
+/* Subtle Batik Parang / Kawung Geometric Background Overlay */
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.15) 0%, transparent 35%),
+                    radial-gradient(circle at 90% 80%, rgba(197, 155, 39, 0.15) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.15rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eed6b3;
+  padding: 0.28rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(238, 214, 179, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-tag svg {
+  color: #f7c980;
+}
+
+.hero-title {
+  font-size: clamp(1.4rem, 3.5vw, 1.95rem);
+  font-weight: 700;
+  line-height: 1.28;
+  margin-bottom: 0.85rem;
+  max-width: 960px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-description {
+  font-size: clamp(0.88rem, 2vw, 0.95rem);
+  color: #f7e8d6;
+  max-width: 900px;
+  line-height: 1.68;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-description em {
+  color: #ffd29d;
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+/* ==========================================================================
+   E-LKPD WORKSHEET CONTAINER & SIDEBAR
+   ========================================================================== */
+.lkpd-container {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+/* Sidebar Navigation */
+.lkpd-sidebar {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-parchment);
+  padding: 1.35rem;
+  position: sticky;
+  top: 96px;
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.lkpd-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--surface-subtle);
+}
+
+.lkpd-sidebar h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--secang-900);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.lkpd-toc {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.lkpd-toc a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.52rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.lkpd-toc a:hover {
+  background: var(--surface-subtle);
+  color: var(--secang-800);
+  border-left-color: var(--secang-500);
+}
+
+.lkpd-toc a.active {
+  background: var(--secang-50);
+  color: var(--secang-900);
+  font-weight: 700;
+  border-left-color: var(--secang-700);
+}
+
+.toc-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--surface-subtle);
+  color: var(--ink-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.lkpd-toc a.active .toc-num {
+  background: var(--secang-700);
+  color: #ffffff;
+}
+
+/* Autosave & Quick Actions in Sidebar */
+.sidebar-save-box {
+  margin-top: 1.25rem;
+  padding: 0.9rem;
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+}
+
+.save-indicator-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink-secondary);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-success);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.2);
+}
+
+/* ==========================================================================
+   AUTHENTIC ARCHIVAL WORKSHEET SHEET (LKPD SHEET)
+   ========================================================================== */
+.lkpd-sheet {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-parchment);
+  padding: 3rem 3.5rem;
+  box-shadow: var(--shadow-warm-md);
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Archival Document Header Box (Kop Naskah Resmi) */
+.lkpd-header-box {
+  border: 2px solid var(--secang-900);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  background: var(--surface-paper);
+  position: relative;
+}
+
+.lkpd-header-box::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid var(--border-gold);
+  pointer-events: none;
+}
+
+.lkpd-institution-header {
+  text-align: center;
+  border-bottom: 2px solid var(--secang-900);
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.institution-meta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.lkpd-institution-header h2 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--secang-950);
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.lkpd-institution-header .subject-line {
+  font-size: 0.85rem;
+  color: var(--ink-secondary);
+  margin-top: 0.35rem;
+}
+
+.lkpd-institution-header .topic-line {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--secang-800);
+  margin-top: 0.35rem;
+}
+
+/* Form Identitas Mahasiswa/Siswa (Academic Docket) */
+.lkpd-id-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.form-control {
+  padding: 0.55rem 0.8rem;
+  font-size: 0.88rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  background: #ffffff;
+  font-family: inherit;
+  color: var(--ink-primary);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--secang-700);
+  box-shadow: 0 0 0 3px rgba(143, 21, 37, 0.12);
+}
+
+textarea.form-control {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Sections of the Worksheet */
+.lkpd-section {
+  margin-bottom: 2.75rem;
+  scroll-margin-top: 110px;
+  position: relative;
+}
+
+.section-badge-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--secang-850);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.65rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-parchment);
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--secang-950);
+  margin-bottom: 1.15rem;
+  line-height: 1.3;
+}
+
+/* Callouts (Academic Field Notes & Research Frames) */
+.info-callout {
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-left: 4px solid var(--secang-700);
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius-xs);
+  margin-bottom: 1.35rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.callout-ethno {
+  background: #fdfaf3;
+  border-color: #eeddc2;
+  border-left-color: var(--amber-600);
+}
+
+.callout-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--secang-900);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.callout-ethno .callout-title {
+  color: var(--amber-900);
+}
+
+/* Authentic Ethnographic Field Quote */
+.ethnographic-quote {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  background: #ffffff;
+  border-left: 3px solid var(--amber-500);
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  font-style: italic;
+  color: var(--amber-900);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  box-shadow: var(--shadow-warm-sm);
+  position: relative;
+}
+
+.ethnographic-quote::before {
+  content: '“';
+  position: absolute;
+  top: -12px;
+  left: 6px;
+  font-size: 3rem;
+  color: rgba(180, 83, 9, 0.15);
+  font-family: Georgia, serif;
+}
+
+/* Figures & Plates */
+.figure-box {
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.figure-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.figure-plate {
+  background: #ffffff;
+  padding: 8px;
+  border: 1px solid var(--border-parchment);
+  box-shadow: var(--shadow-warm-sm);
+  border-radius: var(--radius-xs);
+}
+
+.figure-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.figure-caption {
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+  margin-top: 0.75rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Academic Tables */
+.custom-table-wrapper {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+  background: #ffffff;
+}
+
+.custom-table th {
+  background: var(--surface-subtle);
+  color: var(--secang-950);
+  font-weight: 700;
+  padding: 0.8rem 1rem;
+  border-bottom: 2px solid var(--border-strong);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.custom-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border-parchment);
+  color: var(--ink-primary);
+}
+
+.custom-table tr:hover td {
+  background: #fff8f8;
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.table-input {
+  width: 100%;
+  padding: 0.42rem 0.55rem;
+  font-size: 0.84rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  font-family: inherit;
+  color: var(--ink-primary);
+  background: #ffffff;
+}
+
+.table-input:focus {
+  outline: none;
+  border-color: var(--secang-700);
+}
+
+.color-preview-chip {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* LKPD Interactive Enhancements */
+.lkpd-table-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-xs);
+}
+
+.table-action-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-table-sm {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.chart-in-worksheet {
+  background: var(--surface-card);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.chart-in-worksheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.chart-in-worksheet-header h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--secang-900);
+}
+
+.process-stepper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.process-step {
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem;
+  position: relative;
+  border-top: 3px solid var(--secang-700);
+}
+
+.step-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--secang-800);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.step-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.25rem;
+}
+
+.step-desc {
+  font-size: 0.75rem;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0;
+}
+
+.glossary-card {
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem 1rem;
+}
+
+.glossary-indigenous {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--amber-800);
+}
+
+.glossary-scientific {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--secang-900);
+  margin-top: 0.2rem;
+}
+
+.glossary-concept {
+  font-size: 0.76rem;
+  color: var(--ink-secondary);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.reflection-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.reflection-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-primary);
+  background: var(--surface-paper);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-parchment);
+}
+
+.reflection-item input[type="checkbox"] {
+  margin-top: 0.25rem;
+  cursor: pointer;
+  accent-color: var(--secang-700);
+}
+
+.scaffolding-box {
+  background: #fdfaf3;
+  border-left: 3px solid var(--amber-500);
+  padding: 0.65rem 0.85rem;
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  margin-bottom: 0.65rem;
+  font-size: 0.78rem;
+  color: var(--amber-900);
+}
+
+/* ==========================================================================
+   VIRTUAL LAB SIMULATOR (TACTILE APPARATUS STYLING)
+   ========================================================================== */
+.lab-layout {
+  display: grid;
+  grid-template-columns: 370px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Instrument Control Console */
+.lab-panel {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-parchment);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-warm-md);
+}
+
+.lab-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-parchment);
+}
+
+.lab-panel-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--secang-900);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.control-item {
+  margin-bottom: 1.45rem;
+}
+
+.control-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.control-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.control-val-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  background: var(--secang-50);
+  color: var(--secang-800);
+  border: 1px solid var(--secang-200);
+  border-radius: 3px;
+}
+
+/* Custom Tactical Range Slider */
+.range-slider {
+  width: 100%;
+  height: 7px;
+  border-radius: 4px;
+  background: var(--border-strong);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 0.4rem 0;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secang-700);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  background: var(--secang-600);
+}
+
+.preset-btns {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn-preset {
+  padding: 0.28rem 0.58rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-strong);
+  color: var(--ink-secondary);
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.15s;
+}
+
+.btn-preset:hover {
+  background: var(--secang-100);
+  border-color: var(--secang-600);
+  color: var(--secang-850);
+}
+
+.btn-preset.active {
+  background: var(--secang-800);
+  color: #ffffff;
+  border-color: var(--secang-900);
+}
+
+/* Radio Pill Selector */
+.pill-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.pill-option {
+  position: relative;
+}
+
+.pill-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pill-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 0.15s;
+  background: #ffffff;
+  color: var(--ink-secondary);
+}
+
+.pill-option input:checked + .pill-label {
+  background: var(--secang-50);
+  border-color: var(--secang-700);
+  color: var(--secang-900);
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--secang-700);
+}
+
+/* Apparatus Stage (Realistic Glass & Steel) */
+.lab-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.apparatus-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-parchment);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-warm-md);
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.flask-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Thermostatic Water Bath with Brushed Steel Texture */
+.waterbath-base {
+  width: 230px;
+  height: 260px;
+  background: linear-gradient(180deg, #d8dee8 0%, #cbd4e1 40%, #b8c4d4 100%);
+  border-radius: 14px 14px 22px 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+  border: 2px solid #8c9baebd;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.7), 
+              inset 0 -4px 8px rgba(0, 0, 0, 0.15),
+              0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Digital LED Instrument Display */
+.bath-screen {
+  background: #0b0f19;
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  border: 1px solid #1e293b;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.led-indicator {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+/* Glass Pyrex Erlenmeyer Flask */
+.beaker-glass {
+  width: 145px;
+  height: 165px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  border-top: none;
+  border-radius: 0 0 32px 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(240, 240, 250, 0.1) 100%);
+  backdrop-filter: blur(1.5px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Volumetric Measurement Graduations */
+.beaker-glass::before {
+  content: '- 150ml\A- 100ml\A- 50ml';
+  white-space: pre-wrap;
+  position: absolute;
+  top: 35px;
+  right: 8px;
+  font-size: 0.58rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 24px;
+  text-align: right;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.beaker-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75%;
+  background: #c52439;
+  transition: background-color 0.45s ease;
+  overflow: hidden;
+}
+
+/* Liquid Meniscus Curve */
+.beaker-liquid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Shimmer particles (Secang chips in extraction) */
+.particle {
+  position: absolute;
+  background: #5c1809;
+  border-radius: 2px;
+  opacity: 0.75;
+  animation: swirl 4.5s infinite linear;
+}
+
+@keyframes swirl {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-28px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+.flask-status-pill {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-parchment);
+  color: var(--secang-900);
+}
+
+/* Spectrophotometer UV-Vis Instrument Console */
+.spectro-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.spectro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spectro-header h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--secang-950);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.readout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+}
+
+.readout-card {
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-xs);
+  padding: 0.9rem;
+  text-align: center;
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.readout-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.readout-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--secang-850);
+  margin-top: 0.2rem;
+}
+
+.readout-desc {
+  font-size: 0.7rem;
+  color: var(--ink-secondary);
+  margin-top: 0.15rem;
+}
+
+/* Canvas Spectrum Wrapper */
+.chart-box {
+  background: #ffffff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-parchment);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.chart-header h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--secang-900);
+}
+
+canvas#spectrumChart {
+  width: 100% !important;
+  height: 220px !important;
+  display: block;
+}
+
+/* ==========================================================================
+   Scientific Formula & Mathematical Typography System
+   ========================================================================== */
+.formula-box {
+  background: var(--surface-card);
+  border: 1px solid var(--border-parchment);
+  border-left: 4px solid var(--secang-600);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem 1.25rem;
+  margin: 1.15rem 0;
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.formula-box-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.formula-box-header h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secang-900);
+  margin: 0;
+}
+
+.math-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  margin: 0.65rem 0;
+  background: var(--surface-parchment);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--secang-950);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.math-display .math-var {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--secang-900);
+}
+
+.math-display .math-op {
+  font-style: normal;
+  color: var(--ink-secondary);
+  padding: 0 0.15rem;
+  font-weight: 500;
+}
+
+.math-frac {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.35rem;
+  font-size: 0.95em;
+}
+
+.math-frac-num {
+  border-bottom: 1.5px solid var(--secang-800);
+  padding-bottom: 2px;
+  font-weight: 600;
+}
+
+.math-frac-den {
+  padding-top: 2px;
+  font-weight: 600;
+}
+
+.chem-eq-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  margin: 0.65rem 0;
+  background: var(--surface-parchment);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-primary);
+  line-height: 1.5;
+}
+
+.chem-name-label {
+  font-size: 0.74rem;
+  color: var(--secang-700);
+  font-weight: 600;
+  display: block;
+  text-align: center;
+}
+
+.chem-state {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-style: normal;
+}
+
+.chem-arrow {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.4rem;
+  color: var(--secang-700);
+  font-weight: 700;
+}
+
+.chem-arrow-label {
+  font-size: 0.68rem;
+  color: var(--secang-800);
+  font-weight: 600;
+}
+
+.formula-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem 1rem;
+  margin-top: 0.65rem;
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+}
+
+.formula-legend-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.formula-legend-item .legend-symbol {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--secang-850);
+  background: var(--secang-50);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  border: 1px solid var(--border-light);
+  flex-shrink: 0;
+}
+
+/* Video Thumbnail Showcase & Embed Container */
+.video-preview-wrapper {
+  width: 100%;
+  margin-top: 0.85rem;
+}
+
+.video-thumbnail-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: var(--shadow-warm-sm);
+  background: #0f172a;
+  cursor: pointer;
+  border: 1px solid var(--border-parchment);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-thumbnail-box:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-warm-md);
+}
+
+.video-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.video-thumbnail-box:hover .video-thumbnail-img {
+  transform: scale(1.02);
+  filter: brightness(0.92);
+}
+
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.35);
+  gap: 0.65rem;
+  transition: background 0.2s ease;
+}
+
+.video-thumbnail-box:hover .video-play-overlay {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.play-btn-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.45);
+  transition: transform 0.2s ease, background 0.2s ease;
+  padding-left: 4px;
+}
+
+.video-thumbnail-box:hover .play-btn-circle {
+  transform: scale(1.1);
+  background: #b91c1c;
+}
+
+.play-caption {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.video-badge-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* Embedded Video Player Container */
+.video-player-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: var(--shadow-warm-sm);
+  background: #0f172a;
+}
+
+.video-player-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Mordant Dye Testing Strips */
+.mordant-section {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-parchment);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-warm-md);
+}
+
+.mordant-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--secang-950);
+  margin-bottom: 0.5rem;
+}
+
+.mordant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.15rem;
+  margin-top: 1rem;
+}
+
+.mordant-card {
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mordant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-warm-md);
+}
+
+.fabric-swatch {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-xs);
+  border: 3px solid #ffffff;
+  box-shadow: var(--shadow-warm-md);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.35s ease;
+}
+
+.fabric-swatch::after {
+  content: 'BATIK';
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.45;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   TRIAD REPRESENTATION (JOHNSTONE'S TRIANGLE)
+   ========================================================================== */
+.triad-header-banner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.triad-header-banner h2 {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--secang-950);
+  margin-bottom: 0.4rem;
+}
+
+.triad-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-md);
+  padding: 1.85rem;
+  box-shadow: var(--shadow-warm-sm);
+  margin-bottom: 1.75rem;
+}
+
+.triad-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-parchment);
+}
+
+.triad-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.triad-icon-box.macro {
+  background: var(--secang-100);
+  color: var(--secang-800);
+}
+
+.triad-icon-box.sub {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.triad-icon-box.symbol {
+  background: var(--amber-100);
+  color: var(--amber-800);
+}
+
+.triad-card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--secang-950);
+  line-height: 1.2;
+}
+
+.triad-card-header small {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   QUIZ & EVALUATION MODULE
+   ========================================================================== */
+.quiz-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-parchment);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.quiz-question {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.quiz-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 0.9rem;
+  background: #ffffff;
+  color: var(--ink-primary);
+}
+
+.quiz-opt:hover {
+  background: var(--surface-subtle);
+  border-color: var(--secang-600);
+}
+
+.quiz-opt.selected {
+  background: var(--secang-50);
+  border-color: var(--secang-700);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--secang-700);
+}
+
+.quiz-opt.correct {
+  background: #ecfdf5;
+  border-color: var(--accent-success);
+  color: #065f46;
+  font-weight: 700;
+}
+
+.quiz-opt.incorrect {
+  background: #fef2f2;
+  border-color: var(--accent-danger);
+  color: #991b1b;
+}
+
+.quiz-explanation {
+  margin-top: 1.15rem;
+  padding: 1.15rem;
+  background: var(--surface-paper);
+  border-left: 3px solid var(--secang-700);
+  border-radius: var(--radius-xs);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: none;
+}
+
+/* ==========================================================================
+   INTERACTIVE MODAL DIALOG (REPLACES GENERIC BROWSER ALERT)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 6, 11, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  max-width: 540px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: var(--shadow-warm-xl);
+  transform: translateY(12px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.modal-overlay.active .modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-parchment);
+}
+
+.modal-header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--secang-950);
+}
+
+.modal-body {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-primary);
+  margin-bottom: 1.5rem;
+}
+
+.modal-color-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--surface-paper);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-parchment);
+  margin-top: 1rem;
+}
+
+.modal-swatch-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+  box-shadow: var(--shadow-warm-sm);
+  flex-shrink: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION
+   ========================================================================== */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--secang-950);
+  color: #f7e8d6;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-warm-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transform: translateY(30px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1100;
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Screen defaults for print-only elements */
+.print-running-header,
+.print-running-footer,
+.print-textarea-mirror {
+  display: none;
+}
+
+/* ==========================================================================
+   ACADEMIC A4 PRINT STYLESHEET (@media print)
+   Standar Kertas A4 Portrait: 210mm x 297mm
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 14mm 15mm;
+  }
+
+  /* Reset body dan html */
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 9.5pt !important;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+    line-height: 1.45 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Sembunyikan seluruh kontrol layar dan bilah navigasi */
+  .site-header,
+  .hero-card,
+  .nav-tabs-bar,
+  .lkpd-sidebar,
+  .no-print,
+  .btn,
+  .modal-overlay,
+  .toast-notice,
+  .table-actions-toolbar,
+  .table-action-btns,
+  .tab-pane:not(#tab-lkpd) {
+    display: none !important;
+  }
+
+  /* Tampilkan tab LKPD secara utuh */
+  #tab-lkpd {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .lkpd-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .lkpd-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    width: 100% !important;
+  }
+
+  /* Running Header & Running Footer A4 */
+  .print-running-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 7.5pt !important;
+    color: #555555 !important;
+    border-bottom: 0.5pt solid #cccccc !important;
+    padding-bottom: 4px !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .print-running-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 7.5pt !important;
+    color: #555555 !important;
+    border-top: 0.5pt solid #cccccc !important;
+    padding-top: 4px !important;
+    margin-top: 15px !important;
+  }
+
+  /* Pengendalian Pemisahan Halaman (Page Breaks) */
+  .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Kop Surat Lembaga Resmi UNNES */
+  .lkpd-header-box {
+    border: 2px solid #8F1525 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    padding: 10px 14px !important;
+    margin-bottom: 14px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .lkpd-institution-header h2 {
+    color: #8F1525 !important;
+    font-family: var(--font-serif) !important;
+    font-size: 12.5pt !important;
+    font-weight: 800 !important;
+    margin: 3px 0 !important;
+    text-align: center !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .institution-meta {
+    font-size: 8pt !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-align: center !important;
+    color: #444444 !important;
+  }
+
+  .subject-line, .topic-line {
+    font-size: 8.5pt !important;
+    text-align: center !important;
+    color: #222222 !important;
+    margin-top: 2px !important;
+  }
+
+  /* Kisi Identitas Siswa */
+  .lkpd-id-grid {
+    border-top: 1.5px solid #8F1525 !important;
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .lkpd-id-grid .form-group {
+    margin-bottom: 0 !important;
+  }
+
+  .lkpd-id-grid label {
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    color: #444444 !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Format Bagian LKPD */
+  .lkpd-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px dashed #d5c9b8 !important;
+  }
+
+  .section-badge-bar {
+    margin-bottom: 4px !important;
+  }
+
+  .section-badge {
+    background: #8F1525 !important;
+    color: #ffffff !important;
+    font-size: 7pt !important;
+    font-weight: 700 !important;
+    padding: 2px 6px !important;
+    border-radius: 2px !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .section-line {
+    background: #8F1525 !important;
+    opacity: 0.3 !important;
+  }
+
+  .section-title {
+    color: #8F1525 !important;
+    font-family: var(--font-serif) !important;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Kotak Penjelasan & Panduan (Scaffolding Box) */
+  .info-callout, .scaffolding-box {
+    border: 1px solid #c9bbae !important;
+    background: #faf7f2 !important;
+    padding: 8px 12px !important;
+    margin-bottom: 10px !important;
+    border-radius: 3px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    font-size: 8.5pt !important;
+  }
+
+  .callout-title {
+    font-size: 9pt !important;
+    font-weight: 700 !important;
+    color: #8F1525 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .ethnographic-quote {
+    border-left: 2.5px solid #8F1525 !important;
+    background: #f5efe6 !important;
+    padding: 6px 10px !important;
+    font-style: italic !important;
+    font-size: 8.5pt !important;
+    margin-top: 6px !important;
+  }
+
+  /* Bagan Alir Proses Tradisi Membatik */
+  .process-stepper {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 6px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin: 8px 0 !important;
+  }
+
+  .process-step {
+    border: 1px solid #d4c5b3 !important;
+    background: #ffffff !important;
+    padding: 6px !important;
+    border-radius: 2px !important;
+  }
+
+  .step-badge {
+    font-size: 6.5pt !important;
+    padding: 1px 4px !important;
+  }
+
+  .step-title {
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    margin: 3px 0 2px 0 !important;
+  }
+
+  .step-desc {
+    font-size: 6.5pt !important;
+    line-height: 1.3 !important;
+    color: #444444 !important;
+  }
+
+  /* Glosarium Etnosains */
+  .glossary-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-top: 6px !important;
+  }
+
+  .glossary-card {
+    border: 1px solid #d4c5b3 !important;
+    background: #ffffff !important;
+    padding: 6px 8px !important;
+    border-radius: 2px !important;
+  }
+
+  .glossary-indigenous {
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    color: #8F1525 !important;
+  }
+
+  .glossary-scientific {
+    font-size: 7pt !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    color: #333333 !important;
+  }
+
+  .glossary-concept {
+    font-size: 7pt !important;
+    color: #555555 !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Foto Dokumentasi Penelitian */
+  .figure-box {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin: 8px 0 !important;
+  }
+
+  .figure-gallery {
+    gap: 8px !important;
+  }
+
+  .figure-img {
+    max-height: 110px !important;
+    object-fit: cover !important;
+  }
+
+  .figure-caption {
+    font-size: 7pt !important;
+    color: #444444 !important;
+    margin-top: 3px !important;
+    text-align: center !important;
+  }
+
+  /* Format Tabel Akademik */
+  .custom-table-wrapper {
+    overflow: visible !important;
+    margin: 8px 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .custom-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: 1.5px solid #222222 !important;
+    font-size: 7.5pt !important;
+  }
+
+  .custom-table th {
+    background: #f0ebe4 !important;
+    color: #000000 !important;
+    border: 1px solid #555555 !important;
+    padding: 4px 5px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    font-size: 7.5pt !important;
+  }
+
+  .custom-table td {
+    border: 1px solid #888888 !important;
+    padding: 3px 5px !important;
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+  }
+
+  .color-preview-chip {
+    width: 9px !important;
+    height: 9px !important;
+    border: 0.5px solid #000000 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-right: 3px !important;
+  }
+
+  /* Format Kanvas Grafik Spektrum & Kurva Suhu */
+  .chart-in-worksheet {
+    border: 1px solid #c9bbae !important;
+    background: #ffffff !important;
+    padding: 8px !important;
+    margin: 10px 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .chart-in-worksheet-header h4 {
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    color: #8F1525 !important;
+  }
+
+  canvas#lkpdTempChart {
+    width: 100% !important;
+    max-height: 180px !important;
+    display: block !important;
+  }
+
+  /* Format Isian Form & Input */
+  input.form-control, input.table-input {
+    border: none !important;
+    border-bottom: 1px dotted #333333 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    font-size: 8pt !important;
+    font-weight: 600 !important;
+    padding: 1px 3px !important;
+    box-shadow: none !important;
+  }
+
+  /* Penanganan Area Teks (Textarea) untuk Cetak Berkualitas Tinggi */
+  textarea.form-control {
+    display: none !important;
+  }
+
+  .print-textarea-mirror {
+    display: block !important;
+    font-size: 8.5pt !important;
+    line-height: 1.5 !important;
+    color: #000000 !important;
+    padding: 5px 8px !important;
+    border: 1px solid #777777 !important;
+    background: #ffffff !important;
+    margin-top: 3px !important;
+    min-height: 38px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    white-space: pre-wrap !important;
+    border-radius: 2px !important;
+  }
+
+  /* Garis Titik Panduan Menulis Manual Jika Form Kosong */
+  .print-textarea-empty {
+    background: repeating-linear-gradient(transparent, transparent 18px, #aaaaaa 19px) !important;
+    border: 1px solid #888888 !important;
+    min-height: 58px !important;
+  }
+
+  /* Kotak Refleksi Diri */
+  .reflection-checklist {
+    gap: 6px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .reflection-item {
+    font-size: 7.5pt !important;
+    padding: 5px 8px !important;
+    border: 1px solid #d4c5b3 !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .reflection-item input[type="checkbox"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 12px !important;
+    height: 12px !important;
+    border: 1.5px solid #222222 !important;
+    display: inline-block !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    margin-right: 6px !important;
+  }
+
+  .reflection-item input[type="checkbox"]:checked::after {
+    content: "✓" !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    top: -3px !important;
+    left: 1px !important;
+    color: #000000 !important;
+  }
+
+  /* Kolom Tanda Tangan Pengesahan */
+  .signature-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-top: 15px !important;
+    padding-top: 12px !important;
+    border-top: 1.5px solid #444444 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .signature-grid p {
+    color: #000000 !important;
+  }
+}
+
+/* ==========================================================================
+   COMPREHENSIVE MULTI-DEVICE RESPONSIVE SYSTEM
+   Optimized for Android, iOS, Windows, & macOS (360px to 4K)
+   ========================================================================== */
+
+/* Custom Refined Scrollbars for Desktop & Trackpads */
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface-paper);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d5c8b8;
+    border-radius: 4px;
+    border: 2px solid var(--surface-paper);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b8a692;
+  }
+}
+
+/* Accessible Focus States */
+:focus-visible {
+  outline: 2px solid var(--secang-600);
+  outline-offset: 2px;
+}
+
+/* Tablet & Moderate Laptop (<= 1024px) */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .lkpd-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lkpd-sidebar {
+    position: static;
+    top: auto;
+  }
+
+  .lkpd-toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.35rem;
+  }
+
+  .apparatus-card {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .lab-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flask-container {
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Devices & Small Tablets (<= 768px: Android & iOS Phones) */
+@media (max-width: 768px) {
+  /* Safe Area Insets for iOS & Android */
+  .site-header {
+    padding-top: max(env(safe-area-inset-top), 0px);
+  }
+
+  body {
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  }
+
+  /* Academic Top Strip */
+  .header-academic-strip {
+    padding: 0.45rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2rem;
+    font-size: 0.67rem;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+  }
+
+  .header-academic-strip .strip-institution {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  /* Header Top & Actions */
+  .header-top {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .brand-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.85rem;
+  }
+
+  .unnes-logo-frame {
+    padding: 3px;
+    flex-shrink: 0;
+  }
+
+  .unnes-logo {
+    height: 42px;
+    width: auto;
+  }
+
+  .brand-info h1 {
+    font-size: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .brand-badge {
+    font-size: 0.62rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    margin-top: 0.15rem;
+  }
+
+  .header-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .header-actions .btn {
+    justify-content: center;
+    min-height: 44px; /* Touch target minimum */
+    padding: 0.55rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  /* Navigation Tabs Bar */
+  .nav-tabs-bar {
+    padding: 0.35rem 0.75rem;
+    gap: 0.35rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    border-bottom: 1px solid var(--border-parchment);
+  }
+
+  .nav-tabs-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-tab {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.8rem;
+    min-height: 44px;
+    border-radius: var(--radius-xs);
+    scroll-snap-align: start;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 0;
+  }
+
+  .nav-tab svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Main Content Container */
+  .main-content {
+    padding: 1rem 0.85rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero-card {
+    padding: 1.35rem 1.15rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-meta {
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-tag {
+    font-size: 0.66rem;
+    padding: 0.22rem 0.55rem;
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+    line-height: 1.35;
+    margin-bottom: 0.55rem;
+  }
+
+  .hero-description {
+    font-size: 0.86rem;
+    line-height: 1.58;
+  }
+
+  /* E-LKPD Sheet */
+  .lkpd-sheet {
+    padding: 1.35rem 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .lkpd-header-box {
+    padding: 1.15rem 0.85rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .lkpd-institution-header h2 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .institution-meta {
+    font-size: 0.68rem;
+  }
+
+  .subject-line, .topic-line {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .lkpd-id-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Form Inputs (16px base prevents iOS Safari Auto-Zoom) */
+  .form-control, .table-input {
+    font-size: 16px !important;
+    min-height: 44px;
+    padding: 0.55rem 0.75rem;
+  }
+
+  /* Table Responsiveness */
+  .custom-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0.85rem 0;
+    border-radius: var(--radius-xs);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .custom-table {
+    min-width: 540px;
+    font-size: 0.82rem;
+  }
+
+  .custom-table th, .custom-table td {
+    padding: 0.55rem 0.7rem;
+  }
+
+  .lkpd-table-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .table-action-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+    width: 100%;
+  }
+
+  .table-action-btns .btn {
+    justify-content: center;
+    min-height: 44px;
+    font-size: 0.78rem;
+  }
+
+  /* Virtual Lab Console & Apparatus */
+  .lab-panel {
+    padding: 1.15rem;
+  }
+
+  .preset-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .btn-preset {
+    min-height: 44px;
+    padding: 0.45rem 0.25rem;
+    font-size: 0.76rem;
+    text-align: center;
+  }
+
+  .apparatus-card {
+    padding: 1.15rem;
+  }
+
+  .waterbath-base {
+    width: 210px;
+    height: 240px;
+  }
+
+  .beaker-glass {
+    width: 130px;
+    height: 150px;
+  }
+
+  .readout-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .readout-card {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .readout-val {
+    font-size: 1.25rem;
+  }
+
+  .chart-box {
+    padding: 0.85rem;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  canvas#spectrumChart {
+    height: 180px !important;
+  }
+
+  .mordant-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Triad Representasi */
+  .triad-card {
+    padding: 1.15rem;
+  }
+
+  .triad-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .triad-header-banner h2 {
+    font-size: 1.35rem;
+  }
+
+  .triad-header-banner p {
+    font-size: 0.88rem;
+  }
+
+  /* Signature Block Mobile Layout */
+  .signature-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    text-align: center;
+  }
+
+  /* Reflection Checkbox Tap Target */
+  .reflection-item {
+    min-height: 44px;
+    padding: 0.45rem 0;
+    align-items: flex-start;
+  }
+
+  .reflection-item input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Video & QR Reference Card Mobile Reflow */
+  .video-reference-card {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    justify-items: center;
+    gap: 1rem !important;
+    padding: 1.15rem 0.95rem !important;
+  }
+
+  .video-reference-card .video-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-reference-card .video-info > div {
+    justify-content: center;
+  }
+
+  .theory-box-polar {
+    padding: 1rem 0.9rem !important;
+  }
+}
+
+/* Small Smartphone Breakpoint (<= 480px: iPhone SE, Galaxy S8/A-series) */
+@media (max-width: 480px) {
+  .header-top {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .unnes-logo {
+    height: 38px;
+  }
+
+  .brand-info h1 {
+    font-size: 1.15rem;
+  }
+
+  .brand-badge {
+    display: none;
+  }
+
+  .brand-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .header-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .preset-btns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mordant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-action-btns {
+    grid-template-columns: 1fr;
+  }
+
+  .pill-group {
+    flex-direction: column;
+  }
+
+  .pill-option {
+    width: 100%;
+  }
+
+  .pill-label {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================================
+   ENHANCED INTERACTIVE ANIMATIONS & MODERN VISUAL EXPERIENCE
+   ========================================================================== */
+
+/* 1. Tab Smooth Entrance Transition */
+.tab-pane.active {
+  animation: tabFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. LKPD Live Completion Progress Banner */
+.lkpd-progress-banner {
+  background: var(--surface-card);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-warm-xs);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.lkpd-progress-banner:hover {
+  box-shadow: var(--shadow-warm-sm);
+  border-color: var(--secang-300);
+}
+
+.progress-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.progress-title-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.progress-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--surface-subtle);
+  color: var(--secang-800);
+  border: 1px solid var(--border-parchment);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.progress-summary-text {
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+  font-weight: 500;
+}
+
+.progress-counter-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--secang-900);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+
+.progress-counter-badge.complete {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--surface-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border-parchment);
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d97706 0%, #dc2626 50%, #991b1b 100%);
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.3);
+}
+
+.progress-milestones {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.milestone-chip {
+  font-size: 0.74rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-parchment);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.milestone-chip:hover {
+  border-color: var(--secang-500);
+  color: var(--secang-900);
+  background: var(--surface-paper);
+}
+
+.milestone-chip.done {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #15803d;
+}
+
+.milestone-chip.done::before {
+  content: '✓';
+  font-weight: 800;
+  color: #16a34a;
+}
+
+/* 3. Interactive Laboratory Apparatus Enhancements */
+.waterbath-interactive-stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+/* Thermometer Tube beside Beaker */
+.thermometer-tube {
+  width: 26px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #64748b;
+  border-radius: 12px 12px 14px 14px;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.thermometer-graduations {
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  right: 2px;
+  bottom: 24px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    #64748b 0,
+    #64748b 1px,
+    transparent 1px,
+    transparent 16px
+  );
+  opacity: 0.6;
+}
+
+.thermometer-bulb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #dc2626;
+  box-shadow: 0 0 6px rgba(220, 38, 38, 0.6);
+  z-index: 2;
+}
+
+.mercury-column {
+  width: 6px;
+  height: 50%;
+  background: #dc2626;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 4px rgba(220, 38, 38, 0.5);
+  margin-bottom: -4px;
+  z-index: 1;
+}
+
+/* Magnetic Stirrer Bar */
+.stir-bar {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 14px);
+  width: 28px;
+  height: 6px;
+  background: #ffffff;
+  border: 1px solid #94a3b8;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 4;
+  animation: stirSpin 1.4s infinite linear;
+}
+
+@keyframes stirSpin {
+  0% { transform: scaleX(1); }
+  25% { transform: scaleX(0.2); }
+  50% { transform: scaleX(1); }
+  75% { transform: scaleX(0.2); }
+  100% { transform: scaleX(1); }
+}
+
+/* Simmering Bubbles Container */
+.simmer-bubbles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.simmer-bubble {
+  position: absolute;
+  bottom: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
+  animation: bubbleRise 2s infinite ease-in;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-90px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Steam Wisps */
+.steam-wisps-container {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 35px;
+  pointer-events: none;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.steam-wisps-container.active {
+  opacity: 1;
+}
+
+.steam-wisp {
+  width: 14px;
+  height: 25px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 75%);
+  border-radius: 50%;
+  animation: steamRise 2.4s infinite ease-out;
+}
+
+@keyframes steamRise {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-38px) scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Simulation Trigger Button */
+.btn-sim-action {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--secang-800) 0%, var(--secang-900) 100%);
+  color: #ffffff;
+  border: 1px solid var(--secang-950);
+  border-radius: var(--radius-xs);
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(136, 19, 55, 0.25);
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.btn-sim-action:hover {
+  background: var(--secang-700);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(136, 19, 55, 0.35);
+}
+
+.btn-sim-action:active {
+  transform: translateY(0);
+}
+
+.btn-sim-action.running {
+  background: #0f172a;
+  border-color: #334155;
+  pointer-events: none;
+}
+
+/* 4. Interactive Molecular Structure Explorer (Submikroskopis Triad) */
+.mol-explorer-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow-warm-xs);
+}
+
+.mol-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mol-toggle-group {
+  display: flex;
+  background: var(--surface-subtle);
+  padding: 0.25rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-parchment);
+  gap: 0.25rem;
+}
+
+.mol-toggle-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mol-toggle-btn.active {
+  background: var(--surface-paper);
+  color: var(--secang-900);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mol-display-stage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--surface-paper);
+  border: 1px solid var(--border-parchment);
+  border-radius: var(--radius-xs);
+  padding: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .mol-display-stage {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mol-svg-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #f1e9df;
+  border-radius: 6px;
+  padding: 1rem;
+  min-height: 220px;
+}
+
+.mol-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+}
+
+.mol-param-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: #fef2f2;
+  color: var(--secang-800);
+  border: 1px solid #fecaca;
+  width: fit-content;
+}
+
+/* 5. Animated Mordant Immersion Studio in Modal */
+.mordant-cloth-studio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  background: var(--surface-subtle);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-parchment);
+  flex-wrap: wrap;
+}
+
+.beaker-dip-apparatus {
+  position: relative;
+  width: 90px;
+  height: 110px;
+  border: 3px solid #94a3b8;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mordant-dip-liquid {
+  width: 100%;
+  height: 55%;
+  background: #ef4444;
+  transition: background-color 0.4s ease;
+}
+
+.cloth-strip-hanging {
+  position: absolute;
+  top: -10px;
+  width: 36px;
+  height: 80px;
+  background: #fdfbf7;
+  border: 1px solid #cbd5e1;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  animation: clothDip 2.2s infinite ease-in-out alternate;
+  z-index: 5;
+}
+
+@keyframes clothDip {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(32px); }
+}
+
+.fastness-meter-block {
+  flex: 1;
+  min-width: 220px;
+}
+
+.fastness-scale-track {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.fastness-scale-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #10b981);
+  border-radius: 999px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 6. Confetti Canvas Overlay */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  display: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .tab-pane.active {
+    animation: none;
+  }
+  .stir-bar,
+  .simmer-bubble,
+  .steam-wisp,
+  .cloth-strip-hanging {
+    animation: none !important;
+  }
+  .progress-bar-fill,
+  .mercury-column,
+  .fastness-scale-fill {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   2026 FUTURISTIC ATELIER & FRAMER-MOTION STYLE EXPERIENCES
+   (Inspired by WeAreBrand & Garry Audie / 21st.dev)
+   ========================================================================== */
+
+/* 1. Kinetic Infinite Ticker Marquee Ribbon */
+.atelier-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+  padding: 0.45rem 0;
+  white-space: nowrap;
+  position: relative;
+  z-index: 5;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 1.5rem;
+  align-items: center;
+  animation: marqueeScroll 32s linear infinite;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.marquee-track span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.marquee-star {
+  color: #e11d48;
+  font-size: 0.95rem;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.atelier-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* 2. Hero HUD Telemetry Bar & Canvas Stage */
+.hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+#heroRefractionCanvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.65;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  #heroRefractionCanvas {
+    width: 100%;
+    opacity: 0.35;
+  }
+}
+
+.hero-meta, .hero-title, .hero-description {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-hud-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 0.4rem 0.85rem;
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.15rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #f1f5f9;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+}
+
+.hud-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hud-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: hudPulse 2s infinite ease-in-out;
+}
+
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* 3. Expanding Accordion Cards Showcase (Apple / Garry Audie / 21st.dev style) */
+.expanding-showcase-section {
+  margin: 2.25rem 0;
+}
+
+.expanding-showcase-header {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.expanding-showcase-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--secang-950);
+}
+
+.expanding-cards-grid {
+  display: flex;
+  gap: 0.85rem;
+  width: 100%;
+  height: 440px;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 900px) {
+  .expanding-cards-grid {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.expand-card {
+  position: relative;
+  flex: 1;
+  background: #ffffff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-parchment);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  transition: flex 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-warm-xs);
+}
+
+.expand-card:hover {
+  border-color: var(--secang-400);
+}
+
+.expand-card.active {
+  flex: 3.2;
+  cursor: default;
+  border-color: var(--secang-600);
+  box-shadow: var(--shadow-warm-md);
+}
+
+@media (max-width: 900px) {
+  .expand-card {
+    flex: none !important;
+    height: auto !important;
+    min-height: 76px !important;
+  }
+  .expand-card.active {
+    min-height: auto !important;
+  }
+}
+
+/* Card Visual Backgrounds */
+.expand-card[data-mordant="alum"] {
+  background: radial-gradient(circle at 80% 20%, #ffe4e6 0%, #fff1f2 50%, #ffffff 100%);
+}
+.expand-card[data-mordant="lime"] {
+  background: radial-gradient(circle at 80% 20%, #fce7f3 0%, #fdf2f8 50%, #ffffff 100%);
+}
+.expand-card[data-mordant="iron"] {
+  background: radial-gradient(circle at 80% 20%, #ede9fe 0%, #f5f3ff 50%, #ffffff 100%);
+}
+.expand-card[data-mordant="acid"] {
+  background: radial-gradient(circle at 80% 20%, #fef3c7 0%, #fffbeb 50%, #ffffff 100%);
+}
+
+/* Floating 3D Fabric Swatch */
+.card-floating-swatch {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.expand-card.active .card-floating-swatch {
+  left: auto;
+  right: 1.75rem;
+  top: 1.75rem;
+  transform: translateX(0) rotate(0deg) scale(1.15);
+  width: 105px;
+  height: 105px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22), inset 0 2px 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Collapsed Title (Rotated for non-active columns on desktop) */
+.card-collapsed-label {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.expand-card.active .card-collapsed-label {
+  opacity: 0;
+}
+
+@media (max-width: 900px) {
+  .expand-card {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 1rem 1.25rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.15rem;
+  }
+
+  .expand-card.active {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .card-floating-swatch,
+  .expand-card.active .card-floating-swatch {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 68px !important;
+    height: 68px !important;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .expand-card.active .card-floating-swatch {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 1rem;
+  }
+
+  .card-collapsed-label {
+    position: static;
+    transform: none;
+    display: block;
+    font-size: 0.88rem;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .expand-card.active .card-collapsed-label {
+    display: none;
+  }
+}
+
+/* Expanded Card Content */
+.card-expanded-content {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s 0.15s ease, transform 0.4s 0.15s ease;
+  pointer-events: none;
+  position: relative;
+  z-index: 3;
+  max-width: calc(100% - 135px);
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .card-expanded-content {
+    max-width: 100%;
+  }
+}
+
+.expand-card.active .card-expanded-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.expand-tag-row {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.expand-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--secang-950);
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.expand-card-desc {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  margin-bottom: 0.85rem;
+  max-width: 440px;
+}
+
+.expand-card-chem {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.45rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-parchment);
+  color: var(--secang-900);
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+/* 4. Spotlight Card Hover Effect (21st.dev style) */
+.spotlight-card {
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220, 38, 38, 0.14), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* 5. 3D Perspective Card Tilt (Apple / 21st.dev style) */
+.tilt-3d-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+}
+
+.tilt-3d-card:hover {
+  box-shadow: 0 20px 38px -10px rgba(72, 10, 17, 0.16), 0 10px 18px -6px rgba(72, 10, 17, 0.10);
+}
+
+/* 6. Tactile Audio Equalizer Wave Indicator */
+.audio-eq-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+  margin-left: 4px;
+}
+
+.eq-bar {
+  width: 2.5px;
+  height: 100%;
+  background: #16a34a;
+  border-radius: 1px;
+  animation: eqWave 0.8s infinite ease-in-out alternate;
+}
+
+.eq-bar:nth-child(2) {
+  animation-delay: 0.25s;
+  height: 60%;
+}
+
+.eq-bar:nth-child(3) {
+  animation-delay: 0.5s;
+  height: 80%;
+}
+
+.btn.audio-muted .eq-bar {
+  animation: none;
+  height: 3px;
+  background: #94a3b8;
+}
+
+@keyframes eqWave {
+  0% { height: 25%; }
+  50% { height: 100%; }
+  100% { height: 40%; }
+}
+
+/* 7. Floating Quick-Action Top Dock */
+.btn-floating-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-parchment);
+  color: var(--secang-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-warm-md);
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-floating-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.btn-floating-top:hover {
+  background: var(--secang-700);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: var(--shadow-warm-lg);
+}

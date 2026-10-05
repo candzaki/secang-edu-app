@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SecangLab & E-LKPD Etnosains Kimia | Pengaruh Suhu Ekstraksi Kayu Secang</title>
+  <meta name="description" content="Media Pembelajaran Kimia & E-LKPD Berbasis Etnosains Pewarna Batik Nusantara: Pengaruh Suhu Ekstraksi terhadap Intensitas Warna Ekstrak Kayu Secang (Caesalpinia sappan L.)">
+  <meta name="theme-color" content="#2b060b">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238f1525'><circle cx='12' cy='12' r='10'/><path fill='%23eed6b3' d='M12 6a6 6 0 1 0 0 12A6 6 0 0 0 12 6z'/></svg>">
+  <!-- Google Fonts: Humanist Academic Serif (Lora), Indonesian Modern Sans (Plus Jakarta Sans), & Tabular Scientific Mono (JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= ACADEMIC TOP STRIP ================= -->
+  <aside class="header-academic-strip no-print">
+    <div class="strip-institution">
+      <span>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</span>
+      <span>&bull;</span>
+      <span>Universitas Negeri Semarang (UNNES)</span>
+    </div>
+    <div>
+      <span class="strip-tag">Modul Riset Kurikulum Merdeka &bull; Fase F / LPTK</span>
+    </div>
+  </aside>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="brand-wrapper">
+        <div class="unnes-logo-frame">
+          <img src="assets/logo_unnes.png" alt="Logo UNNES" class="unnes-logo" onerror="this.src='assets/logo_unnes_symbol.png'">
+        </div>
+        <div class="brand-info">
+          <h1>
+            <span>SecangLab</span>
+            <span class="brand-badge">Atelier Etnosains Kimia</span>
+          </h1>
+          <p class="brand-subtitle">Laboratorium Riset Bahan Alam & Pewarna Tradisional Batik Nusantara</p>
+        </div>
+      </div>
+      <div class="header-actions no-print">
+        <button id="btnAudioToggle" class="btn btn-secondary" title="Aktifkan atau Matikan Efek Suara Laboratorium" style="padding: 0.45rem 0.75rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="iconAudio"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <span id="lblAudioToggle">Audio: Aktif</span>
+          <span class="audio-eq-bars" id="audioEqBars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </span>
+        </button>
+        <button id="btnQuickPrint" class="btn btn-primary" title="Cetak atau Simpan sebagai Dokumen Resmi PDF">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>Cetak LKPD (PDF)</span>
+        </button>
+        <button id="btnResetData" class="btn btn-secondary" title="Kosongkan seluruh isian formulir siswa">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          <span>Atur Ulang Form</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs Bar (Clean Academic Stroke Icons) -->
+    <nav class="nav-tabs-bar no-print" role="tablist">
+      <button class="nav-tab active" data-tab="tab-lkpd" role="tab" aria-selected="true">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><line x1="9" y1="7" x2="15" y2="7"></line><line x1="9" y1="11" x2="15" y2="11"></line></svg>
+        <span>Lembar Kerja (E-LKPD)</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-lab" role="tab" aria-selected="false">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.69 19.3A2 2 0 0 0 6.42 22h11.16a2 2 0 0 0 1.73-2.7L14 9.31V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line><line x1="7" y1="14" x2="17" y2="14"></line></svg>
+        <span>Laboratorium Ekstraksi</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-triad" role="tab" aria-selected="false">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
+        <span>Triad Representasi Kimia</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-ethno" role="tab" aria-selected="false">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        <span>Etnosains Batik Nusantara</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-quiz" role="tab" aria-selected="false">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        <span>Evaluasi Pemahaman HOTS</span>
+      </button>
+      <button class="nav-tab" data-tab="tab-teacher" role="tab" aria-selected="false">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        <span>Panduan & Rubrik Guru</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Kinetic Infinite Marquee Ticker (WeAreBrand 2026 Style) -->
+  <div class="atelier-marquee no-print" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">ETNOSAINS NUSANTARA 2026</span>
+      <span class="marquee-item">KAYU SECANG (CAESALPINIA SAPPAN L.)</span>
+      <span class="marquee-item">PIGMEN BRAZILIN C₁₆H₁₄O₅</span>
+      <span class="marquee-item">SPEKTROFOTOMETRI UV-VIS λ 446 NM</span>
+      <span class="marquee-item">PEWARNA ALAMI RAMAH LINGKUNGAN</span>
+      <span class="marquee-item">KHELATASI KOORDINASI MORDAN TAWAS AL³⁺</span>
+      <span class="marquee-item">PRINSIP KIMIA HIJAU (GREEN CHEMISTRY)</span>
+      <span class="marquee-item">SEGITIGA REPRESENTASI KIMIA JOHNSTONE</span>
+      <!-- Duplicate set for seamless infinite loop -->
+      <span class="marquee-item">ETNOSAINS NUSANTARA 2026</span>
+      <span class="marquee-item">KAYU SECANG (CAESALPINIA SAPPAN L.)</span>
+      <span class="marquee-item">PIGMEN BRAZILIN C₁₆H₁₄O₅</span>
+      <span class="marquee-item">SPEKTROFOTOMETRI UV-VIS λ 446 NM</span>
+      <span class="marquee-item">PEWARNA ALAMI RAMAH LINGKUNGAN</span>
+      <span class="marquee-item">KHELATASI KOORDINASI MORDAN TAWAS AL³⁺</span>
+      <span class="marquee-item">PRINSIP KIMIA HIJAU (GREEN CHEMISTRY)</span>
+      <span class="marquee-item">SEGITIGA REPRESENTASI KIMIA JOHNSTONE</span>
+    </div>
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="main-content">
+
+    <!-- ================= TAB 1: E-LKPD INTERAKTIF ================= -->
+    <section id="tab-lkpd" class="tab-pane active" role="tabpanel">
+
+      <!-- Top Banner Card (Heritage Etnobotani Canvas) -->
+      <section class="hero-card no-print spotlight-card">
+        <canvas id="heroRefractionCanvas" class="hero-canvas-refraction" width="900" height="280"></canvas>
+        <div class="hero-hud-bar">
+          <div class="hud-item"><span class="hud-led"></span> SPECTRAL TELEMETRY HUD</div>
+          <div class="hud-item">ABSORPTION: <span class="hud-val">&lambda;<sub>maks</sub> = 446 nm</span></div>
+          <div class="hud-item">CHROMOPHORE: <span class="hud-val">C<sub>16</sub>H<sub>12</sub>O<sub>5</sub> (Brazilein)</span></div>
+          <div class="hud-item">REFRACTION: <span class="hud-val" id="hudCoords">X: 000 | Y: 000</span></div>
+          <div class="hud-item">SYS: <span class="hud-val" id="hudClock">12:30:00 WIB</span></div>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-tag">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            Rekonstruksi Etnosains
+          </span>
+          <span class="hero-tag">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Prinsip Kimia Hijau (Green Chemistry)
+          </span>
+          <span class="hero-tag">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            Rancangan Acak Lengkap (RAL)
+          </span>
+          <span class="hero-tag">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Fase F / SMA &amp; Kuliah Bahan Alam
+          </span>
+        </div>
+        <h2 class="hero-title">Pengaruh Suhu Ekstraksi terhadap Intensitas Warna Ekstrak Kayu Secang sebagai Pewarna Alami</h2>
+        <p class="hero-description">
+          Kajian integratif antara kearifan lokal empu perajin batik keraton dan teori sains kimia modern: kinetika kelarutan difusi zat padat, dekomposisi termolabil pigmen <em>brazilin &amp; brazilein</em>, serta analisis spektrofotometri serapan UV-Vis pada panjang gelombang maksimum (&lambda;<sub>maks</sub> 446 nm).
+        </p>
+      </section>
+
+      <!-- Sticky LKPD Progress Tracker (Siswa Completion Tracker) -->
+      <div class="lkpd-progress-banner no-print" id="lkpdProgressBanner">
+        <div class="progress-info-row">
+          <div class="progress-title-block">
+            <span class="progress-badge">Status Lembar Kerja</span>
+            <span class="progress-summary-text" id="progressSummaryText">0 dari 7 Komponen Utama Terisi</span>
+          </div>
+          <div class="progress-counter-badge" id="progressCounterBadge">0% Selesai</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar-fill" id="lkpdProgressBarFill" style="width: 0%;"></div>
+        </div>
+        <div class="progress-milestones" id="progressMilestones">
+          <span class="milestone-chip" data-target="lkpd-identitas" id="msIdentitas">1. Identitas</span>
+          <span class="milestone-chip" data-target="lkpd-masalah" id="msMasalah">2. Rumusan Masalah</span>
+          <span class="milestone-chip" data-target="lkpd-hipotesis" id="msHipotesis">3. Hipotesis</span>
+          <span class="milestone-chip" data-target="lkpd-tabel" id="msTabel">4. Tabel &amp; Data RAL</span>
+          <span class="milestone-chip" data-target="lkpd-analisis" id="msAnalisis">5. Analisis 3 Tingkat</span>
+          <span class="milestone-chip" data-target="lkpd-hots" id="msHots">6. Soal HOTS</span>
+          <span class="milestone-chip" data-target="lkpd-kesimpulan" id="msKesimpulan">7. Kesimpulan</span>
+        </div>
+      </div>
+
+      <div class="lkpd-container">
+        <!-- Sidebar Navigation for LKPD Sections -->
+        <aside class="lkpd-sidebar no-print">
+          <div class="lkpd-sidebar-header">
+            <h3>Daftar Bagian LKPD</h3>
+            <span style="font-size: 0.72rem; color: var(--ink-muted); font-family: 'JetBrains Mono', monospace;">12 BAGIAN</span>
+          </div>
+          <ul class="lkpd-toc">
+            <li><a href="#lkpd-petunjuk" class="active"><span class="toc-num">0</span> Petunjuk &amp; K3 Hijau</a></li>
+            <li><a href="#lkpd-identitas"><span class="toc-num">A</span> Identitas Kelompok</a></li>
+            <li><a href="#lkpd-tujuan"><span class="toc-num">B</span> Capaian &amp; Tujuan</a></li>
+            <li><a href="#lkpd-stimulus"><span class="toc-num">C</span> Stimulus Etnosains</a></li>
+            <li><a href="#lkpd-masalah"><span class="toc-num">D</span> Rumusan Masalah</a></li>
+            <li><a href="#lkpd-hipotesis"><span class="toc-num">E</span> Perumusan Hipotesis</a></li>
+            <li><a href="#lkpd-prosedur"><span class="toc-num">F</span> Desain &amp; Prosedur</a></li>
+            <li><a href="#lkpd-tabel"><span class="toc-num">G</span> Tabel &amp; Kurva Pengamatan</a></li>
+            <li><a href="#lkpd-analisis"><span class="toc-num">H</span> Analisis Tiga Tingkat Kimia</a></li>
+            <li><a href="#lkpd-hots"><span class="toc-num">I</span> Pertanyaan HOTS</a></li>
+            <li><a href="#lkpd-kesimpulan"><span class="toc-num">J</span> Kesimpulan Akhir</a></li>
+            <li><a href="#lkpd-refleksi"><span class="toc-num">K</span> Refleksi Diri Siswa</a></li>
+            <li><a href="#lkpd-pengesahan"><span class="toc-num">L</span> Pengesahan &amp; Rubrik Guru</a></li>
+          </ul>
+
+          <div class="sidebar-save-box">
+            <div class="save-indicator-row">
+              <span class="pulse-dot"></span>
+              <span>Penyimpanan Data:</span>
+            </div>
+            <div id="saveStatus" style="color: var(--accent-success); font-weight: 700; font-size: 0.76rem;">
+              Tersimpan otomatis di peramban
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.75rem;">
+              <button class="btn btn-primary" id="btnSidebarPrint" style="width: 100%; justify-content: center; font-size: 0.78rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                <span>Cetak / Unduh PDF</span>
+              </button>
+              <button class="btn btn-secondary" id="btnExportJson" style="width: 100%; justify-content: center; font-size: 0.76rem; padding: 0.35rem 0.65rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Cadangkan Data (JSON)</span>
+              </button>
+              <button class="btn btn-secondary" id="btnTriggerImport" style="width: 100%; justify-content: center; font-size: 0.76rem; padding: 0.35rem 0.65rem;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <span>Pulihkan dari File</span>
+              </button>
+              <input type="file" id="inputImportJson" accept=".json" style="display: none;">
+              <button class="btn btn-secondary" id="btnResetDataSidebar" style="width: 100%; justify-content: center; font-size: 0.74rem; padding: 0.35rem 0.65rem; color: #dc2626;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                <span>Kosongkan Form</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- The Printable / Interactive Worksheet Sheet -->
+        <article class="lkpd-sheet">
+
+          <!-- Running Header for Academic A4 Print -->
+          <div class="print-running-header">
+            <span>KEMENDIKBUDRISTEK RI &bull; LPTK UNIVERSITAS NEGERI SEMARANG</span>
+            <span>E-LKPD ETNOSAINS: EKSTRAKSI SECANG (<em>CAESALPINIA SAPPAN L.</em>)</span>
+            <span>FASE F / KELAS XI–XII</span>
+          </div>
+
+          <!-- Header Kop Lembar Kerja Resmi (Halaman 1) -->
+          <div class="lkpd-header-box" id="lkpd-identitas">
+            <div class="lkpd-institution-header">
+              <div class="institution-meta">Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI &bull; LPTK UNNES</div>
+              <h2>LEMBAR KERJA PESERTA DIDIK (LKPD) BERBASIS ETNOSAINS</h2>
+              <div class="subject-line">Materi: Kinetika Pelarutan, Kestabilan Termal Senyawa Organik, dan Spektroskopi Warna Alami</div>
+              <div class="topic-line">Topik: Pengaruh Suhu Ekstraksi terhadap Intensitas Warna Ekstrak Kayu Secang (<em>Caesalpinia sappan L.</em>)</div>
+            </div>
+
+            <!-- Identitas Form Siswa -->
+            <div class="lkpd-id-grid">
+              <div class="form-group">
+                <label for="studentGroup">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  Kelompok / Tim Riset
+                </label>
+                <input type="text" id="studentGroup" class="form-control" placeholder="Contoh: Kelompok 3 (Al-Biruni)">
+              </div>
+              <div class="form-group">
+                <label for="studentClass">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                  Kelas / Semester
+                </label>
+                <input type="text" id="studentClass" class="form-control" placeholder="Contoh: XI MIPA 1 / Ganjil">
+              </div>
+              <div class="form-group">
+                <label for="experimentDate">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  Tanggal Praktikum
+                </label>
+                <input type="date" id="experimentDate" class="form-control">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label for="studentMembers">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                  Anggota Kelompok Peneliti
+                </label>
+                <input type="text" id="studentMembers" class="form-control" placeholder="Tuliskan nama lengkap seluruh anggota kelompok...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bagian 0: Petunjuk Belajar & K3 Laboratorium Kimia Hijau -->
+          <div class="info-callout" id="lkpd-petunjuk" style="margin-bottom: 1.5rem;">
+            <div class="callout-title" style="color: var(--secang-900);">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Petunjuk Belajar &amp; Protokol Keselamatan Kerja (K3) Kimia Hijau
+            </div>
+            <ol style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.86rem; color: var(--ink-secondary);">
+              <li>Bacalah stimulus kearifan lokal etnosains secara cermat bersama anggota kelompok sebelum merumuskan hipotesis.</li>
+              <li>Gunakan masker saat menimbang serbuk simplisia teras kayu secang untuk menghindari inhalasi debu halus organik.</li>
+              <li>Berhati-hatilah saat mengoperasikan penangas air panas (<em>water bath</em>) pada suhu 70&deg;C–100&deg;C, gunakan penjepit kayu atau sarung tangan isolator termal.</li>
+              <li>Praktikum ini menerapkan 4 pilar <em>Green Chemistry</em>: bahan terbarukan, pelarut aman (akuades), efisiensi energi termal (60&deg;C), dan bebas limbah B3.</li>
+              <li>Seluruh perubahan isian pada lembar kerja ini disimpan secara otomatis di peramban Anda.</li>
+            </ol>
+          </div>
+
+          <!-- Section B: Capaian & Tujuan -->
+          <section class="lkpd-section" id="lkpd-tujuan">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN B</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Capaian &amp; Tujuan Pembelajaran</h3>
+
+            <div class="info-callout">
+              <div class="callout-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                Capaian Pembelajaran (Fase F / Kimia Kontekstual Bahan Alam)
+              </div>
+              <p>
+                Peserta didik mampu menerapkan prinsip kerja ilmiah untuk menyelidiki faktor-faktor yang mempengaruhi laju pelarutan/ekstraksi bahan alam dan kestabilan termal senyawa organik; menghubungkan fenomena makroskopik perubahan warna dengan mekanisme submikroskopik kromofor kuinon dan formulasi simbolik Hukum Beer-Lambert; serta merekonstruksi kearifan lokal (*indigenous science*) perajin batik nusantara menjadi sains ilmiah (*scientific science*).
+              </p>
+            </div>
+
+            <div style="font-size: 0.9rem;">
+              <strong style="color: var(--secang-900);">Tujuan Khusus Pembelajaran (Berbasis 4C):</strong>
+              <ol style="margin-left: 1.5rem; margin-top: 0.6rem; display: flex; flex-direction: column; gap: 0.4rem; color: var(--ink-secondary);">
+                <li><strong>Critical Thinking</strong>: Menganalisis pengaruh variasi suhu ekstraksi (40&deg;C, 50&deg;C, 60&deg;C, 70&deg;C, dan 80&deg;C) terhadap perolehan rendemen dan nilai absorbansi spektroskopi ekstrak kayu secang secara kuantitatif.</li>
+                <li><strong>Scientific Inquiry</strong>: Menentukan suhu optimum ekstraksi pigmen brazilein dalam pelarut ramah lingkungan (*green solvent*) akuades murni.</li>
+                <li><strong>Conceptual Integration</strong>: Menjelaskan fenomena termolabilitas (penurunan absorbansi pada suhu &gt;80&deg;C) melalui integrasi tiga tingkatan representasi (makroskopik, submikroskopik kromofor kuinon, dan simbolik stoikiometri).</li>
+                <li><strong>Cultural Reconstruction</strong>: Menguraikan fungsi mordan tawas (Al<sup>3+</sup>) dan air kapur (Ca<sup>2+</sup>/basa) dalam fiksasi warna kain batik mori.</li>
+                <li><strong>Collaboration &amp; Character</strong>: Menumbuhkan kesadaran terhadap nilai-nilai luhur kearifan lokal nusantara serta etos pelestarian lingkungan hidup (*Green Chemistry*).</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Section C: Stimulus Etnosains -->
+          <section class="lkpd-section" id="lkpd-stimulus">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN C</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Stimulus Etnosains: Tradisi Pewarnaan Batik Nusantara</h3>
+
+            <div class="info-callout callout-ethno">
+              <div class="callout-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                Kisah Pak Mulyadi (Empu Perajin Batik Tradisional Jawa Tengah)
+              </div>
+              <p>
+                Di sentra kerajinan batik alami nusantara, teras kayu secang (<em>Caesalpinia sappan L.</em>) telah dimanfaatkan sejak berabad-abad silam sebagai pewarna alami merah yang sakral dan ramah lingkungan. Perajin merebus serutan kayu tua dalam kuali berbahan tanah liat atau baja tahan karat dengan nyala api terkontrol:
+              </p>
+              <div class="ethnographic-quote">
+                "Kunci utama merebus kayu secang adalah menjaga nyala api tetap sedang sehingga suhunya hangat mantap dan tidak bergolak mendidih terlalu liar. Air rebusan mula-mula akan berwarna kuning jingga terang, lalu perlahan beralih menjadi merah delima tua menyala. Bila dibiarkan mendidih bergolak terlalu keras atau terlalu lama, sari merahnya akan 'mati' dan berubah menjadi cokelat butek kusam. Setelah kain mori dicelup, perajin membilasnya dengan air tawas untuk mendapatkan warna merah muda cerah yang tahan luntur cuci, atau dengan air kapur bila menginginkan warna merah keunguan (maroon pekat)."
+              </div>
+            </div>
+
+            <!-- Alur Tahapan Tradisi Pewarnaan Batik Secang -->
+            <div style="margin: 1.25rem 0;">
+              <strong style="font-size: 0.88rem; color: var(--secang-900);">Bagan Alir Tradisi Pewarnaan Batik Alami Kayu Secang:</strong>
+              <div class="process-stepper">
+                <div class="process-step">
+                  <div class="step-badge">Tahap 1</div>
+                  <div class="step-title">Seleksi Teras Kayu</div>
+                  <div class="step-desc">Memilih bagian dalam teras kayu tua (<em>heartwood</em>) berwarna jingga tua kemerahan, memisahkan gubal muda.</div>
+                </div>
+                <div class="process-step">
+                  <div class="step-badge">Tahap 2</div>
+                  <div class="step-title">Perajangan 40 Mesh</div>
+                  <div class="step-desc">Kayu dirajang tipis memanjang menjadi serutan halus untuk memperluas bidang kontak pelarut.</div>
+                </div>
+                <div class="process-step">
+                  <div class="step-badge">Tahap 3</div>
+                  <div class="step-title">Ekstraksi Hangat (60°C)</div>
+                  <div class="step-desc">Direbus dengan api sedang terkontrol (suhu mantap &sim;60&deg;C) selama 30 menit agar pigmen tidak rusak.</div>
+                </div>
+                <div class="process-step">
+                  <div class="step-badge">Tahap 4</div>
+                  <div class="step-title">Pencelupan Mori</div>
+                  <div class="step-desc">Kain mori katun primissima dicelup berulang kali ke dalam filtrat ekstrak merah delima.</div>
+                </div>
+                <div class="process-step">
+                  <div class="step-badge">Tahap 5</div>
+                  <div class="step-title">Fiksasi Mordan</div>
+                  <div class="step-desc">Dibilas larutan tawas (merah muda awet) atau air kapur sirih (merah tua keunguan/maroon).</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Glosarium Etnosains vs Sains Ilmiah -->
+            <div style="margin-top: 1.25rem;">
+              <strong style="font-size: 0.88rem; color: var(--secang-900);">Glosarium Etnosains &amp; Istilah Sains Kimia:</strong>
+              <div class="glossary-grid">
+                <div class="glossary-card">
+                  <div class="glossary-indigenous">Kayu Secang (Serutan Teras Merah)</div>
+                  <div class="glossary-scientific">Caesalpinia sappan L. &bull; Pigmen Brazilein (C<sub>16</sub>H<sub>12</sub>O<sub>5</sub>)</div>
+                  <div class="glossary-concept">Mengandung metabolit sekunder homoisoflavonoid yang bertransformasi menjadi kromofor kuinon merah menyala.</div>
+                </div>
+                <div class="glossary-card">
+                  <div class="glossary-indigenous">Air Tawas Fiksator</div>
+                  <div class="glossary-scientific">KAl(SO<sub>4</sub>)<sub>2</sub>&middot;12H<sub>2</sub>O &bull; Ion Logam Al<sup>3+</sup></div>
+                  <div class="glossary-concept">Asam Lewis pembentuk kompleks khelat koordinasi dengan gugus fenolat zat warna dan selulosa kain.</div>
+                </div>
+                <div class="glossary-card">
+                  <div class="glossary-indigenous">Air Kapur Sirih</div>
+                  <div class="glossary-scientific">Kalsium Hidroksida Ca(OH)<sub>2</sub> &bull; Basa Kuat Encer</div>
+                  <div class="glossary-concept">Memicu deprotonasi fenol brazilein, memperpanjang delokalisasi resonansi elektron pi (efek batokromik).</div>
+                </div>
+                <div class="glossary-card">
+                  <div class="glossary-indigenous">Warna Sari 'Mati' / Cokelat Butek</div>
+                  <div class="glossary-scientific">Degradasi Termolabil Cincin Piran &amp; Polikondensasi</div>
+                  <div class="glossary-concept">Kerusakan struktur kromofor kuinon planar akibat suhu berlebih (>80°C) membentuk pigmen cokelat inaktif.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kajian Kimia Sifat Kepolaran Pelarut Air & Kinetika Sel -->
+            <div class="theory-box-polar" style="margin-top: 1.35rem; background: var(--surface-card); border: 1px solid var(--border-parchment); border-left: 4px solid var(--secang-600); border-radius: var(--radius-sm); padding: 1.15rem 1.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--secang-700)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <strong style="font-size: 0.95rem; color: var(--secang-900);">Kajian Kimia: Sifat Kepolaran Pelarut Air (<em>Like Dissolves Like</em>) &amp; Kinetika Difusi Sel Kayu Secang</strong>
+              </div>
+              <p style="font-size: 0.88rem; line-height: 1.6; color: var(--ink-secondary); margin-bottom: 0.65rem;">
+                Pigmen metabolit sekunder utama kayu secang adalah <strong>brazilin</strong> (C<sub>16</sub>H<sub>14</sub>O<sub>5</sub>), suatu senyawa homoisoflavonoid yang kaya akan gugus hidroksil fenolik (&minus;OH). Berdasarkan prinsip termodinamika kelarutan <em>"like dissolves like"</em>, molekul air (H<sub>2</sub>O) yang bersifat sangat polar (memiliki momen dipol permanen &mu; = 1,85 D dan konstanta dielektrik tinggi &epsilon; &approx; 80) dapat membentuk jaringan ikatan hidrogen intermolekuler yang kuat dengan gugus hidroksil brazilin.
+              </p>
+              <div class="polar-steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 0.5rem;">
+                <div style="background: var(--surface-parchment); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-light);">
+                  <strong style="font-size: 0.82rem; color: var(--secang-800);">1. Pembengkakan (<em>Swelling</em>) Sel:</strong>
+                  <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.2rem; line-height: 1.45;">Pemanasan air memicu pelunakan matriks hemiselulosa dan lignin dinding sel kayu secang, membuka pori-pori simplisia secara makroskopik.</p>
+                </div>
+                <div style="background: var(--surface-parchment); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-light);">
+                  <strong style="font-size: 0.82rem; color: var(--secang-800);">2. Kinetika Difusi Fick:</strong>
+                  <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.2rem; line-height: 1.45;">Energi termal meningkatkan energi kinetik molekul pelarut, mempercepat laju penetrasi molekul air ke vakuola sel untuk melarutkan kristal brazilin.</p>
+                </div>
+                <div style="background: var(--surface-parchment); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-light);">
+                  <strong style="font-size: 0.82rem; color: var(--secang-800);">3. Batas Kestabilan Termal (&le;80&deg;C):</strong>
+                  <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.2rem; line-height: 1.45;">Pada suhu &gt;80&deg;C hingga mendidih, cincin piran brazilein mengalami degradasi termolabil dan polikondensasi membentuk zat cokelat inaktif.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dokumentasi Foto Penelitian Asli -->
+            <div class="figure-box" style="margin-top: 1.5rem;">
+              <div class="figure-gallery">
+                <div class="figure-plate">
+                  <img src="assets/bab2/secang_dan_ekstrak.jpg" alt="Kayu Secang dan Ekstrak" class="figure-img" onerror="this.src='assets/bab1/pewarnaan_batik_secang.jpg'">
+                </div>
+                <div class="figure-plate">
+                  <img src="assets/bab1/pewarnaan_batik_secang.jpg" alt="Pewarnaan Batik Tradisional Secang" class="figure-img" onerror="this.style.display='none'">
+                </div>
+              </div>
+              <p class="figure-caption"><strong>Gambar 1.</strong> Simplisia serutan teras kayu secang 40 mesh (kiri) dan tradisi pencelupan kain batik mori pada larutan ekstrak secang (kanan).</p>
+            </div>
+          </section>
+
+          <!-- Section D: Identifikasi Masalah -->
+          <section class="lkpd-section page-break-before" id="lkpd-masalah">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN D</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Identifikasi &amp; Rumusan Masalah Ilmiah</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.85rem; color: var(--ink-secondary);">
+              Berdasarkan wacana etnosains di atas, diskusikan bersama kelompok Anda mengenai keterkaitan suhu penangas air dengan kualitas warna ekstrak yang diperoleh. Rumuskan 2 (dua) pertanyaan penyelidikan ilmiah:
+            </p>
+            
+            <div class="scaffolding-box">
+              <strong>Panduan Perumusan Masalah:</strong> Gunakan kalimat tanya operasional yang menghubungkan variabel bebas (suhu ekstraksi) dengan variabel terikat (rendemen, nilai absorbansi &lambda;<sub>maks</sub>, atau intensitas warna).
+            </div>
+
+            <div class="form-group">
+              <label for="problemStatement1">Rumusan Masalah 1 (Pengaruh Suhu terhadap Intensitas Warna &amp; Absorbansi):</label>
+              <textarea id="problemStatement1" class="form-control" placeholder="Contoh: Bagaimanakah pengaruh kenaikan suhu ekstraksi dari 40°C hingga 80°C terhadap perolehan persentase rendemen dan nilai absorbansi spektroskopi UV-Vis ekstrak kayu secang?"></textarea>
+            </div>
+            <div class="form-group" style="margin-top: 1rem;">
+              <label for="problemStatement2">Rumusan Masalah 2 (Fenomena Termolabilitas Suhu Tinggi):</label>
+              <textarea id="problemStatement2" class="form-control" placeholder="Contoh: Mengapa pemanasan pada suhu di atas 80°C atau perebusan mendidih bergolak menyebabkan warna merah ekstrak secang mengalami degradasi menjadi cokelat keruh kusam?"></textarea>
+            </div>
+          </section>
+
+          <!-- Section E: Hipotesis -->
+          <section class="lkpd-section" id="lkpd-hipotesis">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN E</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Perumusan Hipotesis Ilmiah</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.85rem; color: var(--ink-secondary);">
+              Kemukakan hipotesis ilmiah (jawaban sementara berbasis teori kinetika difusi Fick dan kestabilan termal senyawa organik) kelompok Anda:
+            </p>
+            
+            <div class="scaffolding-box">
+              <strong>Panduan Hipotesis:</strong> Format kausalitas: *"Jika suhu ekstraksi dinaikkan hingga suhu optimum (...°C), maka nilai absorbansi dan rendemen akan (...), namun apabila suhu melebihi (...°C), maka terjadi (...)"*.
+            </div>
+
+            <div class="form-group">
+              <label for="hypothesisText">Pernyataan Hipotesis Kelompok:</label>
+              <textarea id="hypothesisText" class="form-control" rows="3" placeholder="Contoh: Peningkatan suhu ekstraksi dari 40°C hingga 60°C akan meningkatkan laju difusi dan intensitas warna merah (absorbansi maksimum), namun suhu di atas 60°C–80°C akan memicu degradasi termolabil kromofor kuinon brazilein sehingga nilai absorbansi mengalami penurunan."></textarea>
+            </div>
+          </section>
+
+          <!-- Section F: Desain Variabel & Prosedur -->
+          <section class="lkpd-section" id="lkpd-prosedur">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN F</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Rancangan Variabel &amp; Prosedur Kerja Terstandar</h3>
+
+            <div class="custom-table-wrapper" style="margin-bottom: 1.5rem;">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th style="width: 220px;">Jenis Variabel</th>
+                    <th>Operasionalisasi dalam Eksperimen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Variabel Bebas (Manipulasi)</strong></td>
+                    <td>Suhu penangas air ekstraksi termostatik: 40&deg;C, 50&deg;C, 60&deg;C, 70&deg;C, dan 80&deg;C.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Variabel Terikat (Respon)</strong></td>
+                    <td>Persentase rendemen (%), nilai absorbansi UV-Vis (&lambda;<sub>maks</sub> 446 nm), koordinat warna CIE a* (kemerahan), dan deskripsi visual rona warna.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Variabel Kontrol</strong></td>
+                    <td>Massa simplisia secang (10,00 g), volume akuades (100 mL, rasio 1:10 g/mL), ukuran partikel simplisia (40 mesh), durasi ekstraksi (30 menit), dan kecepatan putaran pengadukan termostatik (150 rpm).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Prosedur Kerja Skala Mikro -->
+            <div style="font-size: 0.88rem; line-height: 1.6; color: var(--ink-secondary);">
+              <strong style="color: var(--secang-900);">Prosedur Kerja Ekstraksi Skala Mikro:</strong>
+              <ol style="margin-left: 1.5rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                <li>Timbang tepat 10,00 gram serutan kayu secang 40 mesh menggunakan neraca analitik ke dalam 5 labu Erlenmeyer 250 mL.</li>
+                <li>Tambahkan 100 mL akuades murni ke dalam masing-masing labu (rasio padat-cair 1:10 g/mL). Tutup mulut labu rapat dengan aluminium foil.</li>
+                <li>Panaskan labu pada penangas air (*water bath shaker*) dengan pengadukan termostatik 150 rpm pada variasi suhu: 40&deg;C, 50&deg;C, 60&deg;C, 70&deg;C, dan 80&deg;C selama tepat 30 menit.</li>
+                <li>Saring filtrat hangat menggunakan corong kaca dan kertas saring Whatman No. 42 ke dalam botol vial gelap untuk memisahkan ampas residu simplisia.</li>
+                <li>Ukur nilai serapan filtrat pada panjang gelombang maksimum (&lambda;<sub>maks</sub> 443–455 nm) menggunakan spektrofotometer UV-Vis dan catat deskripsi visual warna larutan.</li>
+                <li>Celupkan potongan kain mori primissima putih (5 &times; 5 cm) ke dalam ekstrak 60&deg;C, tiriskan, lalu celupkan ke dalam larutan mordan tawas 5% dan air kapur jenuh. Amati ketahanan dan rona warnanya.</li>
+              </ol>
+            </div>
+
+            <!-- Video Demonstrasi & Kode QR Rujukan Prosedur Laboratorium -->
+            <div class="video-reference-card" style="margin-top: 1.5rem; background: var(--surface-card); border: 1px solid var(--border-parchment); border-radius: var(--radius-md); padding: 1.35rem; display: flex; flex-direction: column; gap: 1.15rem;">
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center;" class="video-header-row">
+                <div class="qr-code-frame" style="background: #ffffff; padding: 0.5rem; border-radius: var(--radius-xs); border: 1px solid var(--border-light); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 108px; height: 108px; box-shadow: var(--shadow-sm); flex-shrink: 0;">
+                  <!-- Vector QR Code with direct active link to the specific YouTube video -->
+                  <a href="https://www.youtube.com/watch?v=-HEfP-wmHrc" target="_blank" rel="noopener noreferrer" title="Pindai atau klik untuk membuka video spesifik di YouTube" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                    <svg width="84" height="84" viewBox="0 0 100 100" fill="var(--secang-900)">
+                      <rect x="0" y="0" width="30" height="30" fill="none" stroke="var(--secang-900)" stroke-width="6"/>
+                      <rect x="8" y="8" width="14" height="14" fill="var(--secang-900)"/>
+                      <rect x="70" y="0" width="30" height="30" fill="none" stroke="var(--secang-900)" stroke-width="6"/>
+                      <rect x="78" y="8" width="14" height="14" fill="var(--secang-900)"/>
+                      <rect x="0" y="70" width="30" height="30" fill="none" stroke="var(--secang-900)" stroke-width="6"/>
+                      <rect x="8" y="78" width="14" height="14" fill="var(--secang-900)"/>
+                      <rect x="36" y="8" width="6" height="6"/><rect x="48" y="8" width="6" height="6"/><rect x="58" y="8" width="6" height="6"/>
+                      <rect x="36" y="20" width="6" height="6"/><rect x="44" y="20" width="10" height="6"/><rect x="58" y="20" width="6" height="6"/>
+                      <rect x="8" y="36" width="6" height="6"/><rect x="20" y="36" width="6" height="6"/><rect x="36" y="36" width="14" height="6"/><rect x="56" y="36" width="8" height="6"/><rect x="70" y="36" width="6" height="6"/><rect x="86" y="36" width="8" height="6"/>
+                      <rect x="8" y="48" width="14" height="6"/><rect x="28" y="48" width="6" height="6"/><rect x="40" y="48" width="6" height="6"/><rect x="52" y="48" width="14" height="6"/><rect x="72" y="48" width="10" height="6"/><rect x="88" y="48" width="6" height="6"/>
+                      <rect x="8" y="58" width="6" height="6"/><rect x="20" y="58" width="8" height="6"/><rect x="36" y="58" width="8" height="6"/><rect x="50" y="58" width="6" height="6"/><rect x="64" y="58" width="14" height="6"/><rect x="84" y="58" width="10" height="6"/>
+                      <rect x="36" y="72" width="6" height="14"/><rect x="48" y="72" width="10" height="6"/><rect x="64" y="72" width="6" height="6"/><rect x="76" y="72" width="18" height="6"/>
+                      <rect x="48" y="84" width="6" height="10"/><rect x="60" y="84" width="10" height="10"/><rect x="76" y="84" width="6" height="10"/><rect x="88" y="84" width="6" height="10"/>
+                    </svg>
+                    <span style="font-size: 0.58rem; color: var(--secang-800); font-weight: 700; margin-top: 2px;">PINDAI KE VIDEO</span>
+                  </a>
+                </div>
+                <div class="video-info">
+                  <div style="display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.25rem; flex-wrap: wrap;">
+                    <span class="badge" style="background: var(--secang-100); color: var(--secang-800); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: var(--radius-xs);">VIDEO PRAKTIKUM SPESIFIK</span>
+                    <span style="font-size: 0.75rem; color: var(--ink-muted);">&bull; Ekstraksi Zat Warna Alami Kayu Secang (<em>Caesalpinia sappan L.</em>)</span>
+                  </div>
+                  <h4 style="font-family: var(--font-serif); font-size: 1.08rem; color: var(--secang-900); margin-bottom: 0.35rem;">
+                    Video Prosedur: Pembuatan Pewarna Alami Kayu Secang &amp; Pencelupan Kain
+                  </h4>
+                  <p style="font-size: 0.84rem; line-height: 1.55; color: var(--ink-secondary); margin-bottom: 0.65rem;">
+                    Saksikan langkah riil preparasi serutan kayu secang, perebusan pada suhu terkontrol untuk mengekstraksi kromofor brazilein, penyaringan filtrat, serta teknik fiksasi mordan pada kain mori. Video dapat diputar langsung di bawah ini atau dibuka di peramban Anda.
+                  </p>
+                  <div style="display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap;">
+                    <a href="https://www.youtube.com/watch?v=-HEfP-wmHrc" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secang" style="font-size: 0.8rem; padding: 0.45rem 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                      <span>Buka Langsung di YouTube (-HEfP-wmHrc)</span>
+                    </a>
+                    <button type="button" class="btn btn-secondary" onclick="document.querySelector('[data-tab=tab-lab]').click();" style="font-size: 0.8rem; padding: 0.45rem 0.85rem;">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      <span>Buka Simulator Virtual Lab</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tampilan Thumbnail Video Praktikum & Pemutar Interaktif -->
+              <div class="video-preview-wrapper" id="videoPreviewWrapper">
+                <div class="video-thumbnail-box" id="videoThumbnailBox" onclick="startVideoPlayer()" title="Klik untuk memutar video praktikum ini">
+                  <img 
+                    src="https://img.youtube.com/vi/-HEfP-wmHrc/maxresdefault.jpg" 
+                    alt="Thumbnail Video Pewarna Kayu Secang untuk Kain Caesalpinia Sappan" 
+                    class="video-thumbnail-img"
+                    onerror="this.src='https://img.youtube.com/vi/-HEfP-wmHrc/hqdefault.jpg'"
+                  >
+                  <div class="video-play-overlay">
+                    <div class="play-btn-circle">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                    <span class="play-caption">KLIK UNTUK MEMUTAR VIDEO PRAKTIKUM</span>
+                  </div>
+                  <div class="video-badge-duration">YouTube &bull; Kinayar Craft</div>
+                </div>
+
+                <!-- Pemutar Video Tersemat (Direct Responsive Embed) -->
+                <div class="video-player-container" id="videoPlayerContainer" style="display: none;">
+                  <iframe 
+                    id="youtubeIframe"
+                    src=""
+                    data-src="https://www.youtube-nocookie.com/embed/-HEfP-wmHrc?autoplay=1&amp;rel=0" 
+                    title="Video Prosedur: Pembuatan Pewarna Alami Kayu Secang untuk Kain (How to make dye Caesalpinia sappan)" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen 
+                    loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section G: Tabel & Kurva Pengamatan -->
+          <section class="lkpd-section page-break-before" id="lkpd-tabel">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN G</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Tabel Data Hasil Pengamatan &amp; Kurva Spektroskopi</h3>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 0.75rem;">
+              Catat data perlakuan ekstraksi kelompok Anda pada tabel berikut. Persentase rendemen dihitung otomatis dari massa simplisia dan massa ekstrak kering:
+            </p>
+
+            <!-- Kartu Rumus Perhitungan Kuantitatif Rendemen -->
+            <div class="formula-box">
+              <div class="formula-box-header">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--secang-700)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <h4>Formulasi Matematis: Persentase Rendemen Ekstrak (% Rendemen)</h4>
+              </div>
+              <div class="math-display">
+                <span class="math-var">% Rendemen</span>
+                <span class="math-op">=</span>
+                <span class="math-frac">
+                  <span class="math-frac-num"><span class="math-var">Massa Ekstrak Kering (g)</span></span>
+                  <span class="math-frac-den"><span class="math-var">Massa Simplisia Kayu Secang (g)</span></span>
+                </span>
+                <span class="math-op">&times;</span>
+                <span>100%</span>
+              </div>
+              <div class="formula-legend-grid">
+                <div class="formula-legend-item">
+                  <span class="legend-symbol">W<sub>ekstrak</sub></span>
+                  <span>Massa filtrat padat kering hasil penguapan pelarut (gram)</span>
+                </div>
+                <div class="formula-legend-item">
+                  <span class="legend-symbol">W<sub>simplisia</sub></span>
+                  <span>Massa serutan kayu secang 40 mesh sebelum diekstraksi (10,00 gram)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Toolbar for Observation Table -->
+            <div class="lkpd-table-actions no-print">
+              <div class="table-action-btns" style="flex-wrap: wrap;">
+                <button class="btn btn-outline-secang" id="btnFillPdfSampleData" style="font-size: 0.78rem; padding: 0.4rem 0.85rem;" title="Muat data rujukan empiris blueprint LKPD (suhu 40°C–100°C pada λ 530 nm)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Muat Data Rujukan Blueprint (&lambda;=530 nm, Puncak 80&deg;C)</span>
+                </button>
+                <button class="btn btn-outline-amber" id="btnFillSampleData" style="font-size: 0.78rem; padding: 0.4rem 0.85rem;" title="Muat data empiris laboratorium UNNES (&lambda; 446 nm)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Muat Data Riset UNNES (&lambda;=446 nm, Puncak 60&deg;C)</span>
+                </button>
+                <button class="btn btn-secondary" id="btnImportFromSim" style="font-size: 0.78rem; padding: 0.4rem 0.85rem;" title="Salin parameter perlakuan dari simulator Virtual Lab">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  <span>Salin Data Uji Virtual Lab Terkini</span>
+                </button>
+              </div>
+              <div class="table-action-btns">
+                <button class="btn btn-secondary btn-table-sm" id="btnAddRow" title="Tambah baris data eksperimen baru">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <span>Tambah Baris</span>
+                </button>
+                <button class="btn btn-secondary btn-table-sm" id="btnRemoveRow" title="Hapus baris data terakhir">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <span>Hapus Baris</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Custom Table -->
+            <div class="custom-table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th style="width: 35px;">No</th>
+                    <th style="width: 90px;">Pelarut</th>
+                    <th style="width: 75px;">Suhu (&deg;C)</th>
+                    <th style="width: 95px;">Massa Simplisia</th>
+                    <th style="width: 95px;">Bobot Ekstrak</th>
+                    <th style="width: 90px;">% Rendemen</th>
+                    <th style="width: 80px;">&lambda; maks</th>
+                    <th style="width: 90px;">Absorbansi (A)</th>
+                    <th>Deskripsi Warna Visual</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBodyRows">
+                  <!-- Row 1 -->
+                  <tr>
+                    <td>1</td>
+                    <td><input type="text" class="table-input" value="Akuades"></td>
+                    <td><input type="number" class="table-input col-temp" value="40"></td>
+                    <td><input type="text" class="table-input col-simplisia" value="10.00"></td>
+                    <td><input type="text" class="table-input col-extract" value="0.845"></td>
+                    <td><input type="text" class="table-input col-yield" value="8.45%" readonly style="background:#fafafa; font-weight:700;"></td>
+                    <td><input type="text" class="table-input col-lambda" value="443"></td>
+                    <td><input type="text" class="table-input col-abs" value="0.420"></td>
+                    <td><span class="color-preview-chip" style="background:#f59e0b;"></span>Kuning jingga terang</td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr>
+                    <td>2</td>
+                    <td><input type="text" class="table-input" value="Akuades"></td>
+                    <td><input type="number" class="table-input col-temp" value="50"></td>
+                    <td><input type="text" class="table-input col-simplisia" value="10.00"></td>
+                    <td><input type="text" class="table-input col-extract" value="1.120"></td>
+                    <td><input type="text" class="table-input col-yield" value="11.20%" readonly style="background:#fafafa; font-weight:700;"></td>
+                    <td><input type="text" class="table-input col-lambda" value="445"></td>
+                    <td><input type="text" class="table-input col-abs" value="0.610"></td>
+                    <td><span class="color-preview-chip" style="background:#ea580c;"></span>Jingga kemerahan</td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr>
+                    <td>3</td>
+                    <td><input type="text" class="table-input" value="Akuades"></td>
+                    <td><input type="number" class="table-input col-temp" value="60"></td>
+                    <td><input type="text" class="table-input col-simplisia" value="10.00"></td>
+                    <td><input type="text" class="table-input col-extract" value="1.385"></td>
+                    <td><input type="text" class="table-input col-yield" value="13.85%" readonly style="background:#fafafa; font-weight:700;"></td>
+                    <td><input type="text" class="table-input col-lambda" value="446"></td>
+                    <td><input type="text" class="table-input col-abs" value="0.782"></td>
+                    <td><span class="color-preview-chip" style="background:#c52439;"></span><strong>Merah segar delima (Optimum)</strong></td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr>
+                    <td>4</td>
+                    <td><input type="text" class="table-input" value="Akuades"></td>
+                    <td><input type="number" class="table-input col-temp" value="70"></td>
+                    <td><input type="text" class="table-input col-simplisia" value="10.00"></td>
+                    <td><input type="text" class="table-input col-extract" value="1.410"></td>
+                    <td><input type="text" class="table-input col-yield" value="14.10%" readonly style="background:#fafafa; font-weight:700;"></td>
+                    <td><input type="text" class="table-input col-lambda" value="448"></td>
+                    <td><input type="text" class="table-input col-abs" value="0.720"></td>
+                    <td><span class="color-preview-chip" style="background:#8f1525;"></span>Merah agak gelap</td>
+                  </tr>
+                  <!-- Row 5 -->
+                  <tr>
+                    <td>5</td>
+                    <td><input type="text" class="table-input" value="Akuades"></td>
+                    <td><input type="number" class="table-input col-temp" value="80"></td>
+                    <td><input type="text" class="table-input col-simplisia" value="10.00"></td>
+                    <td><input type="text" class="table-input col-extract" value="1.320"></td>
+                    <td><input type="text" class="table-input col-yield" value="13.20%" readonly style="background:#fafafa; font-weight:700;"></td>
+                    <td><input type="text" class="table-input col-lambda" value="452"></td>
+                    <td><input type="text" class="table-input col-abs" value="0.640"></td>
+                    <td><span class="color-preview-chip" style="background:#5c0d17;"></span>Merah kecokelatan kusam</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Interaktif: Grafik Kurva Suhu vs Absorbansi Langsung di Lembar LKPD -->
+            <div class="chart-in-worksheet">
+              <div class="chart-in-worksheet-header">
+                <h4>Kurva Hubungan Suhu Ekstraksi vs Nilai Absorbansi UV-Vis (A) &amp; Rendemen (%)</h4>
+                <span style="font-size: 0.74rem; font-family: 'JetBrains Mono', monospace; color: var(--ink-muted);">λ maks = 446 nm &bull; Pelarut Akuades</span>
+              </div>
+              <canvas id="lkpdTempChart" width="700" height="230" style="width: 100% !important; height: 230px !important; display: block;"></canvas>
+              <div style="font-size: 0.76rem; color: var(--ink-secondary); margin-top: 0.5rem; text-align: center; font-style: italic;">
+                Grafik diperbarui secara instan sesuai nilai data perlakuan suhu dan absorbansi pada tabel di atas. Garis merah: Absorbansi (<em>A</em>), Garis kuning keemasan: Rendemen (%).
+              </div>
+            </div>
+
+            <!-- Uji Fiksasi Mordan Sub-Table -->
+            <div style="margin-top: 1.75rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--secang-900); margin-bottom: 0.5rem;">
+                Tabel Uji Fiksasi Mordan pada Kain Batik Mori:
+              </h4>
+              <div class="custom-table-wrapper">
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Perlakuan Mordan</th>
+                      <th>Bahan Kimia Pengikat</th>
+                      <th>Perubahan Warna Kain Mori</th>
+                      <th>Fungsi dalam Fiksasi Batik</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Tanpa Mordan (Kontrol)</strong></td>
+                      <td>- (Ekstrak murni)</td>
+                      <td><span class="color-preview-chip" style="background:#dc2626;"></span>Merah terang (mudah luntur)</td>
+                      <td>Warna awal serapan fisik tanpa ikatan kimia koordinasi kuat.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mordan Tawas</strong></td>
+                      <td>KAl(SO<sub>4</sub>)<sub>2</sub>&middot;12H<sub>2</sub>O (Al<sup>3+</sup>)</td>
+                      <td><span class="color-preview-chip" style="background:#f43f5e;"></span>Merah muda cerah awet</td>
+                      <td>Membentuk kompleks khelat ion Al<sup>3+</sup>, mengunci warna pada serat selulosa.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mordan Kapur Sirih</strong></td>
+                      <td>Ca(OH)<sub>2</sub> jenuh (Ca<sup>2+</sup> &amp; OH<sup>-</sup>)</td>
+                      <td><span class="color-preview-chip" style="background:#831843;"></span>Merah tua keunguan (maroon pekat)</td>
+                      <td>Deprotonasi gugus fenol dalam suasana basa (efek batokromik bergeser ke panjang gelombang lebih panjang).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section H: Analisis & Triad Kimia -->
+          <section class="lkpd-section page-break-before" id="lkpd-analisis">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN H</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Analisis Data Penyelidikan (3 Tingkat Representasi Kimia)</h3>
+
+            <!-- 1. Makroskopik -->
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.25rem; margin-bottom: 1.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--secang-850); margin-bottom: 0.65rem;">
+                Tingkat 1: Analisis Representasi Makroskopik (Fenomena Teramati)
+              </h4>
+              <div class="form-group" style="margin-bottom: 0.85rem;">
+                <label for="analysisMacroColor">H1. Deskripsikan evolusi perubahan rona warna dan kejernihan filtrat dari suhu 40&deg;C, 60&deg;C, hingga 80&deg;C dan 100&deg;C:</label>
+                <textarea id="analysisMacroColor" class="form-control" rows="3" placeholder="Jelaskan perubahan warna dari kuning jingga cerah (40°C), merah delima jernih menyala (60°C), hingga merah gelap kecokelatan (80°C) dan cokelat keruh kusam (100°C)..."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="analysisMacroMordant">H2. Deskripsikan perbedaan rona warna kain mori setelah difiksasi mordan tawas dibandingkan air kapur sirih:</label>
+                <textarea id="analysisMacroMordant" class="form-control" rows="3" placeholder="Jelaskan perbedaan warna visual antara mordan tawas (merah muda cerah tahan cuci) dan kapur sirih (merah tua keunguan pekat/maroon)..."></textarea>
+              </div>
+            </div>
+
+            <!-- 2. Submikroskopik -->
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.25rem; margin-bottom: 1.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #3730a3; margin-bottom: 0.65rem;">
+                Tingkat 2: Analisis Representasi Submikroskopik (Partikulat &amp; Molekuler)
+              </h4>
+              <div class="form-group" style="margin-bottom: 0.85rem;">
+                <label for="analysisSubmicroOxidation">H3. Jelaskan mekanisme oksidasi pembentukan kromofor kuinon dari molekul brazilin menjadi brazilein!</label>
+                <textarea id="analysisSubmicroOxidation" class="form-control" rows="3" placeholder="Jelaskan pelepasan 2 proton dan 2 elektron saat brazilin teroksidasi oleh oksigen terlarut membentuk cincin kuinon planar dengan delokalisasi elektron pi terkonjugasi penuh..."></textarea>
+              </div>
+              <div class="form-group" style="margin-bottom: 0.85rem;">
+                <label for="analysisSubmicroThermo">H4. Jelaskan fenomena termolabilitas (penurunan absorbansi dan perubahan warna menjadi cokelat kusam pada suhu pemanasan berlebih >80°C):</label>
+                <textarea id="analysisSubmicroThermo" class="form-control" rows="3" placeholder="Tinjau pemutusan ikatan heterosiklik cincin piran pada brazilein akibat energi termal berlebih yang memicu reaksi polimerisasi kondensasi fenolik menjadi senyawa cokelat inaktif..."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="analysisSubmicroChelate">H5. Bagaimanakah ion logam Al³⁺ pada mordan tawas membentuk ikatan khelat koordinasi dengan gugus zat warna dan serat selulosa?</label>
+                <textarea id="analysisSubmicroChelate" class="form-control" rows="3" placeholder="Jelaskan peran ion Al³⁺ sebagai asam Lewis yang menerima pasangan elektron bebas dari atom oksigen gugus fenolik dan karbonil brazilein, serta mengikat gugus hidroksil serat selulosa mori..."></textarea>
+              </div>
+            </div>
+
+            <!-- 3. Simbolik -->
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--amber-800); margin-bottom: 0.65rem;">
+                Tingkat 3: Analisis Representasi Simbolik (Persamaan Reaksi &amp; Notasi Matematika)
+              </h4>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="analysisSymbolicRedox">H6. Tuliskan persamaan stoikiometri redoks lengkap pembentukan pigmen brazilein dari brazilin:</label>
+                <!-- Tampilan Visual Persamaan Kimia Referensi -->
+                <div class="chem-eq-display" style="margin: 0.5rem 0;">
+                  <span>C<sub>16</sub>H<sub>14</sub>O<sub>5</sub><span class="chem-state">(aq)</span> <span class="chem-name-label">Brazilin (Kuning Muda)</span></span>
+                  <span class="math-op">+</span>
+                  <span>&frac12; O<sub>2</sub><span class="chem-state">(aq)</span> <span class="chem-name-label">Oksigen Terlarut</span></span>
+                  <span class="chem-arrow">
+                    <span class="chem-arrow-label">Energi Termal (&Delta;)</span>
+                    <span>&rarr;</span>
+                  </span>
+                  <span>C<sub>16</sub>H<sub>12</sub>O<sub>5</sub><span class="chem-state">(aq)</span> <span class="chem-name-label">Brazilein (Kuinon Merah)</span></span>
+                  <span class="math-op">+</span>
+                  <span>H<sub>2</sub>O<span class="chem-state">(l)</span> <span class="chem-name-label">Air</span></span>
+                </div>
+                <textarea id="analysisSymbolicRedox" class="form-control" rows="2" placeholder="Tuliskan kembali persamaan reaksi dan berikan penjelasan singkat mekanisme oksidasinya..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="analysisSymbolicBeer">
+                  H7. Berdasarkan <strong>Hukum Lambert-Beer</strong>, hitung konsentrasi molar (<em>C</em>) pigmen brazilein pada kondisi ekstraksi optimum (60&deg;C):
+                </label>
+                <!-- Tampilan Visual Formulasi Matematika Lambert-Beer -->
+                <div class="formula-box" style="margin: 0.65rem 0; padding: 0.95rem 1.15rem; background: var(--surface-card);">
+                  <div class="math-display" style="font-size: 1.1rem; margin: 0 0 0.5rem 0;">
+                    <span class="math-var">A</span>
+                    <span class="math-op">=</span>
+                    <span class="math-var">&epsilon;</span>
+                    <span class="math-op">&times;</span>
+                    <span class="math-var">b</span>
+                    <span class="math-op">&times;</span>
+                    <span class="math-var">C</span>
+                    <span class="math-op">&emsp;&Longleftrightarrow&emsp;</span>
+                    <span class="math-var">C</span>
+                    <span class="math-op">=</span>
+                    <span class="math-frac">
+                      <span class="math-frac-num"><span class="math-var">A</span></span>
+                      <span class="math-frac-den"><span class="math-var">&epsilon;</span> &times; <span class="math-var">b</span></span>
+                    </span>
+                  </div>
+                  <div class="formula-legend-grid" style="font-size: 0.8rem;">
+                    <div class="formula-legend-item">
+                      <span class="legend-symbol">A = 0,782</span>
+                      <span>Nilai absorbansi terukur pada &lambda;<sub>maks</sub> 446 nm</span>
+                    </div>
+                    <div class="formula-legend-item">
+                      <span class="legend-symbol">&epsilon; = 15.200 L&middot;mol<sup>&minus;1</sup>&middot;cm<sup>&minus;1</sup></span>
+                      <span>Koefisien absorptivitas molar brazilein</span>
+                    </div>
+                    <div class="formula-legend-item">
+                      <span class="legend-symbol">b = 1,00 cm</span>
+                      <span>Panjang jalur optik kuvet spektrofotometer</span>
+                    </div>
+                    <div class="formula-legend-item">
+                      <span class="legend-symbol">C = ? mol/L</span>
+                      <span>Konsentrasi zat warna terlarut yang dicari</span>
+                    </div>
+                  </div>
+                </div>
+                <textarea id="analysisSymbolicBeer" class="form-control" rows="2" placeholder="Tuliskan langkah perhitungan: C = A / (ε × b) = 0,782 / (15.200 × 1) = 5,14 × 10⁻⁵ mol/L"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section I: Pertanyaan HOTS -->
+          <section class="lkpd-section" id="lkpd-hots">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN I</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Pertanyaan Evaluasi Penalaran Kritis (HOTS)</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div class="form-group">
+                <label for="hotsQ1">
+                  1. <strong>Optimasi Suhu &amp; Efisiensi Termal</strong>: Mengapa suhu 60&deg;C lebih disarankan sebagai protokol baku industri/sekolah daripada suhu 70&deg;C atau 80&deg;C, meskipun rendemen pada 70&deg;C sedikit lebih tinggi (14,10% vs 13,85%)? Tinjau rasio serapan absorbansi kromofor murni terhadap konsumsi energi termal!
+                </label>
+                <textarea id="hotsQ1" class="form-control" rows="3" placeholder="Jawaban analisis kelompok..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="hotsQ2">
+                  2. <strong>Rekonstruksi Kearifan Lokal</strong>: Tradisi perajin batik menuntut agar air rebusan secang tidak dibiarkan mendidih bergolak terlalu lama karena warna akan berubah 'cokelat butek'. Bagaimanakah sains ilmiah kimia membuktikan kebenaran anjuran tradisional perajin tersebut?
+                </label>
+                <textarea id="hotsQ2" class="form-control" rows="3" placeholder="Jawaban analisis kelompok..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="hotsQ3">
+                  3. <strong>Analisis Pelarut Hijau (Green Chemistry)</strong>: Mengapa pelarut bio-etanol 50% menghasilkan nilai rendemen dan absorbansi yang sedikit lebih tinggi dibanding akuades murni, namun akuades tetap direkomendasikan sebagai pelarut utama untuk praktikum di sekolah?
+                </label>
+                <textarea id="hotsQ3" class="form-control" rows="3" placeholder="Jawaban analisis kelompok..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="hotsQ4">
+                  4. <strong>Efek Batokromik vs Hipsokromik</strong>: Mengapa pencelupan kain berpewarna secang ke dalam air kapur menghasilkan warna merah keunguan pekat (pergeseran batokromik), sedangkan air perasan jeruk nipis menghasilkan warna kuning jingga cerah (pergeseran hipsokromik)? Jelaskan perubahan kerapatan elektronnya!
+                </label>
+                <textarea id="hotsQ4" class="form-control" rows="3" placeholder="Jawaban analisis kelompok..."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section J: Kesimpulan Akhir -->
+          <section class="lkpd-section page-break-before" id="lkpd-kesimpulan">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN J</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Kesimpulan Akhir Penyelidikan</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.85rem; color: var(--ink-secondary);">
+              Sintesiskan seluruh hasil pengamatan eksperimen, teori kinetika pelarutan, kestabilan termolabil brazilein, dan rekonstruksi etnosains yang telah Anda lakukan ke dalam sebuah kesimpulan utuh:
+            </p>
+            <div class="form-group">
+              <label for="finalConclusion">Kesimpulan Umum Kelompok:</label>
+              <textarea id="finalConclusion" class="form-control" rows="4" placeholder="Tuliskan kesimpulan komprehensif kelompok Anda di sini..."></textarea>
+            </div>
+          </section>
+
+          <!-- Section K: Lembar Refleksi Diri Siswa -->
+          <section class="lkpd-section" id="lkpd-refleksi">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN K</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Lembar Refleksi Diri &amp; Sikap Ilmiah Etnopedagogi</h3>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 0.75rem;">
+              Berilah tanda centang (&check;) pada pernyataan yang paling mencerminkan pengalaman dan refleksi belajar Anda:
+            </p>
+
+            <div class="reflection-checklist">
+              <label class="reflection-item">
+                <input type="checkbox" id="refCheck1" checked>
+                <span><strong>Apresiasi Warisan Budaya Nusantara</strong>: Saya semakin mengagumi kecerdasan leluhur dan perajin batik nusantara yang telah menerapkan prinsip sains kimia ramah lingkungan jauh sebelum sains modern berkembang.</span>
+              </label>
+              <label class="reflection-item">
+                <input type="checkbox" id="refCheck2" checked>
+                <span><strong>Kesadaran Kimia Hijau (*Green Chemistry*)</strong>: Saya memahami pentingnya pemilihan pelarut non-toksik (akuades) dan pemanfaatan bahan hayati terbarukan untuk mengurangi limbah kimia berbahaya.</span>
+              </label>
+              <label class="reflection-item">
+                <input type="checkbox" id="refCheck3" checked>
+                <span><strong>Keterampilan Berpikir Kritis</strong>: Saya mampu menganalisis hubungan sebab-akibat antara energi termal ekstraksi dengan dekomposisi struktur molekul pigmen organik.</span>
+              </label>
+              <label class="reflection-item">
+                <input type="checkbox" id="refCheck4" checked>
+                <span><strong>Kolaborasi Tim</strong>: Saya dan rekan kelompok saling berbagi tugas secara bertanggung jawab dalam merumuskan masalah, mengolah data, dan menyusun laporan ilmiah.</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Section L: Lembar Pengesahan & Rubrik Guru -->
+          <section class="lkpd-section" id="lkpd-pengesahan">
+            <div class="section-badge-bar">
+              <span class="section-badge">BAGIAN L</span>
+              <div class="section-line"></div>
+            </div>
+            <h3 class="section-title">Lembar Pengesahan &amp; Rubrik Asesmen Pendidik</h3>
+
+            <!-- Rubrik Nilai Guru -->
+            <div class="custom-table-wrapper" style="margin-bottom: 2rem;">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th style="width: 200px;">Aspek Penilaian</th>
+                    <th style="width: 90px; text-align: center;">Skor Maks</th>
+                    <th style="width: 100px; text-align: center;">Skor Perolehan</th>
+                    <th>Catatan / Umpan Balik Guru</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Perumusan Masalah &amp; Hipotesis</strong></td>
+                    <td style="text-align: center;">20</td>
+                    <td style="text-align: center;"><input type="number" class="table-input" style="text-align:center;" min="0" max="20" placeholder="..."></td>
+                    <td><input type="text" class="table-input" placeholder="Catatan aspek 1..."></td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Ketelitian Data Eksperimen / Tabel</strong></td>
+                    <td style="text-align: center;">25</td>
+                    <td style="text-align: center;"><input type="number" class="table-input" style="text-align:center;" min="0" max="25" placeholder="..."></td>
+                    <td><input type="text" class="table-input" placeholder="Catatan aspek 2..."></td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Analisis 3 Tingkat Representasi Kimia</strong></td>
+                    <td style="text-align: center;">30</td>
+                    <td style="text-align: center;"><input type="number" class="table-input" style="text-align:center;" min="0" max="30" placeholder="..."></td>
+                    <td><input type="text" class="table-input" placeholder="Catatan aspek 3..."></td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. Refleksi Kritis HOTS &amp; Kesimpulan</strong></td>
+                    <td style="text-align: center;">25</td>
+                    <td style="text-align: center;"><input type="number" class="table-input" style="text-align:center;" min="0" max="25" placeholder="..."></td>
+                    <td><input type="text" class="table-input" placeholder="Catatan aspek 4..."></td>
+                  </tr>
+                  <tr style="background: var(--surface-subtle); font-weight: 700;">
+                    <td>TOTAL NILAI AKHIR (100)</td>
+                    <td style="text-align: center;">100</td>
+                    <td style="text-align: center;"><input type="number" class="table-input" style="text-align:center; font-weight:800; color:var(--secang-900);" min="0" max="100" placeholder="Skor"></td>
+                    <td>Status: <em>Tuntas / Remedial / Pengayaan</em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Tanda Tangan Kelompok & Guru (Print Format) -->
+            <div class="signature-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-parchment);">
+              <div style="text-align: center;">
+                <p style="font-size: 0.85rem; color: var(--ink-muted);">Mengetahui,</p>
+                <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 3.5rem;">Guru Pembimbing Kimia</p>
+                <p style="border-bottom: 1px solid var(--ink-primary); display: inline-block; min-width: 180px;"></p>
+                <p style="font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.25rem;">NIP. .................................................</p>
+              </div>
+              <div style="text-align: center;">
+                <p style="font-size: 0.85rem; color: var(--ink-muted);">Semarang, ............................. 2026</p>
+                <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 3.5rem;">Ketua Kelompok Penyelidik</p>
+                <p style="border-bottom: 1px solid var(--ink-primary); display: inline-block; min-width: 180px;"></p>
+                <p style="font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.25rem;">NISN. ..............................................</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Running Footer for Academic A4 Print -->
+          <div class="print-running-footer">
+            <span>Lembar Kerja Peserta Didik (LKPD) &bull; Laboratorium Kimia Bahan Alam FMIPA UNNES</span>
+            <span>Dokumen Resmi Portofolio Praktikum</span>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= TAB 2: VIRTUAL LAB EKSTRAKSI SIMULATOR ================= -->
+    <section id="tab-lab" class="tab-pane" role="tabpanel">
+      <div class="lab-layout">
+
+        <!-- Control Console Panel -->
+        <aside class="lab-panel">
+          <div class="lab-panel-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <h3>Parameter Termostatik</h3>
+          </div>
+
+          <!-- Suhu Slider -->
+          <div class="control-item">
+            <div class="control-label-row">
+              <span class="control-label">Suhu Ekstraksi (T):</span>
+              <span class="control-val-badge" id="lblTemp">60 &deg;C</span>
+            </div>
+            <input type="range" id="sliderTemp" class="range-slider" min="40" max="100" step="5" value="60">
+            <div class="preset-btns">
+              <button class="btn-preset" data-temp="40">40&deg;C</button>
+              <button class="btn-preset" data-temp="50">50&deg;C</button>
+              <button class="btn-preset active" data-temp="60">60&deg;C (Optimum)</button>
+              <button class="btn-preset" data-temp="70">70&deg;C</button>
+              <button class="btn-preset" data-temp="80">80&deg;C</button>
+              <button class="btn-preset" data-temp="100" style="color:var(--secang-800);">100&deg;C (Mendidih)</button>
+            </div>
+          </div>
+
+          <!-- Pelarut -->
+          <div class="control-item">
+            <div class="control-label-row">
+              <span class="control-label">Jenis Pelarut Ramah Lingkungan:</span>
+            </div>
+            <div class="pill-group">
+              <div class="pill-option">
+                <input type="radio" name="solventType" id="solvWater" value="water" checked>
+                <label for="solvWater" class="pill-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                  Akuades (100%)
+                </label>
+              </div>
+              <div class="pill-option">
+                <input type="radio" name="solventType" id="solvEthanol" value="ethanol">
+                <label for="solvEthanol" class="pill-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  Bio-Etanol 50%
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rasio Massa:Volume -->
+          <div class="control-item">
+            <div class="control-label-row">
+              <span class="control-label">Rasio Simplisia / Pelarut:</span>
+              <span class="control-val-badge" id="lblRatio">1 : 10 (g/mL)</span>
+            </div>
+            <select id="selectRatio" class="form-control">
+              <option value="10">1 : 10 (10,0 g bahan dalam 100 mL)</option>
+              <option value="15">1 : 15 (10,0 g bahan dalam 150 mL)</option>
+              <option value="20">1 : 20 (10,0 g bahan dalam 200 mL)</option>
+            </select>
+          </div>
+
+          <!-- Durasi Pemanasan -->
+          <div class="control-item">
+            <div class="control-label-row">
+              <span class="control-label">Durasi Waktu Ekstraksi:</span>
+              <span class="control-val-badge" id="lblTime">30 Menit</span>
+            </div>
+            <input type="range" id="sliderTime" class="range-slider" min="5" max="60" step="5" value="30">
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1.5rem;">
+            <button class="btn btn-primary" id="btnTransferToLKPD" style="justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+              <span>Salin Hasil Uji ke Tabel LKPD</span>
+            </button>
+            <div id="transferFeedback" style="font-size: 0.78rem; text-align: center; color: var(--accent-success); font-weight: 700; min-height: 18px;"></div>
+          </div>
+        </aside>
+
+        <!-- Virtual Stage & Instrument -->
+        <main class="lab-stage">
+
+          <!-- Apparatus View -->
+          <div class="apparatus-card spotlight-card">
+            <div class="flask-container">
+              <div class="waterbath-interactive-stage">
+                <!-- Precision Laboratory Thermometer Tube -->
+                <div class="thermometer-tube" title="Termometer Suhu Ekstraksi Termostatik">
+                  <div class="thermometer-graduations"></div>
+                  <div class="mercury-column" id="thermometerMercury" style="height: 50%;"></div>
+                  <div class="thermometer-bulb"></div>
+                </div>
+
+                <!-- Waterbath Base -->
+                <div class="waterbath-base">
+                  <div class="bath-screen" id="bathScreenLed">
+                    <span class="led-indicator" id="ledIndicator"></span>
+                    TEMP: <span id="displayBathTemp">60.0</span>&deg;C | <span id="displayBathRpm">150 RPM</span>
+                  </div>
+
+                  <!-- Lab Flask Inside Bath -->
+                  <div class="beaker-glass" id="beakerGlass">
+                    <!-- Steam Wisps Container (Active at >70°C) -->
+                    <div class="steam-wisps-container" id="steamContainer">
+                      <div class="steam-wisp" style="left: 20%; animation-delay: 0s;"></div>
+                      <div class="steam-wisp" style="left: 50%; animation-delay: 0.8s;"></div>
+                      <div class="steam-wisp" style="left: 75%; animation-delay: 1.4s;"></div>
+                    </div>
+
+                    <!-- Beaker Liquid with Stirrer & Effervescence -->
+                    <div class="beaker-liquid" id="flaskLiquid">
+                      <!-- Simmering Micro-Bubbles -->
+                      <div class="simmer-bubbles-container" id="bubblesContainer">
+                        <div class="simmer-bubble" style="left: 25%; width: 6px; height: 6px; animation-duration: 1.8s; animation-delay: 0.2s;"></div>
+                        <div class="simmer-bubble" style="left: 45%; width: 8px; height: 8px; animation-duration: 2.2s; animation-delay: 0.7s;"></div>
+                        <div class="simmer-bubble" style="left: 70%; width: 5px; height: 5px; animation-duration: 1.5s; animation-delay: 0.4s;"></div>
+                        <div class="simmer-bubble" style="left: 60%; width: 7px; height: 7px; animation-duration: 2s; animation-delay: 1.1s;"></div>
+                      </div>
+
+                      <!-- Secang Wood Shavings Particles -->
+                      <div class="particle" style="top: 20%; left: 30%; width: 12px; height: 3px;"></div>
+                      <div class="particle" style="top: 60%; left: 40%; width: 8px; height: 3px; animation-duration: 3s;"></div>
+                      <div class="particle" style="top: 40%; left: 70%; width: 14px; height: 4px; animation-duration: 5s;"></div>
+                      <div class="particle" style="top: 75%; left: 20%; width: 10px; height: 3px; animation-duration: 4.5s;"></div>
+
+                      <!-- Teflon Magnetic Stirrer Bar -->
+                      <div class="stir-bar" id="magneticStirBar" title="Pengaduk Magnetik Otomatis"></div>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: 10px; font-size: 0.7rem; color: #475569; font-weight: 700; letter-spacing: 0.06em;">
+                    THERMOSTATIC WATERBATH
+                  </div>
+                </div>
+              </div>
+
+              <div class="flask-status-pill" id="liquidStatusDesc">
+                Kondisi: Ekstrak Merah Segar Delima (Optimum)
+              </div>
+
+              <!-- Dedicated Interactive Extraction Action Button -->
+              <button class="btn-sim-action" id="btnRunExtractionSim" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span id="lblRunExtraction">Jalankan Siklus Ekstraksi (Animasi Reaksi)</span>
+              </button>
+            </div>
+
+            <!-- Spektrofotometer UV-Vis Readout -->
+            <div class="spectro-readout">
+              <div class="spectro-header">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                  Spektrofotometer UV-Vis &amp; Kolorimetri
+                </h4>
+                <span class="hero-tag" style="background:#0f172a; color:#38bdf8; border:none; font-family:'JetBrains Mono', monospace;">ONLINE</span>
+              </div>
+
+              <div class="readout-grid">
+                <div class="readout-card">
+                  <div class="readout-label">&lambda; Maksimum</div>
+                  <div class="readout-val" id="readoutLambda">446 nm</div>
+                  <div class="readout-desc">Puncak serapan brazilein</div>
+                </div>
+                <div class="readout-card">
+                  <div class="readout-label">Absorbansi (A)</div>
+                  <div class="readout-val" id="readoutAbs">0.782</div>
+                  <div class="readout-desc">Kromofor terkonjugasi</div>
+                </div>
+                <div class="readout-card">
+                  <div class="readout-label">Rendemen Ekstrak</div>
+                  <div class="readout-val" id="readoutYield">13.85%</div>
+                  <div class="readout-desc">Perolehan gravimetri</div>
+                </div>
+                <div class="readout-card">
+                  <div class="readout-label">Kroma CIE a*</div>
+                  <div class="readout-val" id="readoutCieA">+38.4</div>
+                  <div class="readout-desc">Derajat merah delima</div>
+                </div>
+              </div>
+
+              <!-- Interactive Chart Canvas -->
+              <div class="chart-box spotlight-card">
+                <div class="chart-header">
+                  <h4>Kurva Spektrum Serapan UV-Vis (380 - 620 nm)</h4>
+                  <span style="font-size: 0.78rem; color: var(--ink-muted); font-family: 'JetBrains Mono', monospace;">A = &epsilon; &middot; b &middot; C</span>
+                </div>
+                <canvas id="spectrumChart" width="600" height="220"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uji Fiksasi Mordan Batik Section -->
+          <div class="mordant-section">
+            <h4 class="mordant-title">Uji Coba Pencelupan Kain Batik Mori &amp; Respon Mordan</h4>
+            <p style="font-size: 0.85rem; color: var(--ink-secondary);">
+              Klik masing-masing perlakuan mordan di bawah untuk melihat respon interaksi kimia dan warna kain batik:
+            </p>
+
+            <div class="mordant-grid">
+              <div class="mordant-card">
+                <div class="fabric-swatch" id="swatchPlain" style="background-color: #ef4444;"></div>
+                <div style="font-weight: 700; font-size: 0.88rem; color: var(--secang-950);">1. Tanpa Mordan (Kontrol)</div>
+                <p style="font-size: 0.78rem; color: var(--ink-secondary); line-height: 1.45;">Ekstrak murni menempel secara fisika, mudah luntur bila dicuci.</p>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" onclick="app.testMordant('plain')">
+                  Inspeksi Interaksi
+                </button>
+              </div>
+
+              <div class="mordant-card">
+                <div class="fabric-swatch" id="swatchAlum" style="background-color: #f43f5e;"></div>
+                <div style="font-weight: 700; font-size: 0.88rem; color: var(--secang-950);">2. Mordan Tawas (Al<sup>3+</sup>)</div>
+                <p style="font-size: 0.78rem; color: var(--ink-secondary); line-height: 1.45;">Membentuk kompleks khelat koordinasi, merah muda cerah dan tahan cuci.</p>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" onclick="app.testMordant('alum')">
+                  Inspeksi Interaksi
+                </button>
+              </div>
+
+              <div class="mordant-card">
+                <div class="fabric-swatch" id="swatchLime" style="background-color: #831843;"></div>
+                <div style="font-weight: 700; font-size: 0.88rem; color: var(--secang-950);">3. Mordan Air Kapur (Ca<sup>2+</sup>)</div>
+                <p style="font-size: 0.78rem; color: var(--ink-secondary); line-height: 1.45;">Suasana basa deprotonasi fenol, warna merah keunguan (maroon pekat).</p>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" onclick="app.testMordant('lime')">
+                  Inspeksi Interaksi
+                </button>
+              </div>
+
+              <div class="mordant-card">
+                <div class="fabric-swatch" id="swatchAcid" style="background-color: #f59e0b;"></div>
+                <div style="font-weight: 700; font-size: 0.88rem; color: var(--secang-950);">4. Uji Asam (Jeruk Nipis)</div>
+                <p style="font-size: 0.78rem; color: var(--ink-secondary); line-height: 1.45;">Protonasi gugus kromofor kuinon, warna beralih menjadi kuning jingga cerah.</p>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" onclick="app.testMordant('acid')">
+                  Inspeksi Interaksi
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </section>
+
+    <!-- ================= TAB 3: 3 LEVEL REPRESENTASI ================= -->
+    <section id="tab-triad" class="tab-pane" role="tabpanel">
+      <div style="max-width: 1020px; margin: 0 auto;">
+
+        <div class="triad-header-banner">
+          <h2>Segitiga Representasi Kimia (Johnstone's Triangle)</h2>
+          <p style="font-size: 0.95rem; color: var(--ink-secondary); max-width: 780px; margin: 0 auto;">
+            Menghubungkan fenomena teramati di laboratorium (makroskopik), mekanisme partikel atomik molekuler (submikroskopik), dan notasi kuantitatif ilmiah (simbolik) dalam konteks kimia pewarna secang.
+          </p>
+        </div>
+
+        <div class="figure-box" style="margin-bottom: 2rem;">
+          <img src="assets/bab2/4c.jpg" alt="Integrasi Tiga Tingkat Representasi Kimia Etnosains" class="figure-img" style="max-height: 280px; width:auto; margin:0 auto;" onerror="this.style.display='none'">
+          <p class="figure-caption"><strong>Gambar 2.</strong> Kerangka integrasi Tiga Tingkat Representasi Kimia dalam pembelajaran sains kontekstual etnobotani nusantara.</p>
+        </div>
+
+        <!-- Level 1: Makroskopik -->
+        <div class="triad-card spotlight-card tilt-3d-card">
+          <div class="triad-card-header">
+            <div class="triad-icon-box macro">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <div>
+              <h3>Level 1: Makroskopik (Fenomena Teramati)</h3>
+              <small>Teramati secara visual langsung oleh panca indera di laboratorium praktikum</small>
+            </div>
+          </div>
+          <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.92rem; color: var(--ink-primary);">
+            <li><strong>Morfologi Simplisia:</strong> Teras kayu secang tua memiliki rona jingga kemerahan alami, diserut halus memanjang (lolos ayakan 40 mesh) untuk memperluas bidang kontak.</li>
+            <li><strong>Dinamika Perubahan Warna:</strong> Pada suhu awal 40&deg;C larutan berwarna kuning jingga muda terang; ketika suhu dinaikkan hingga 60&deg;C larutan bertransformasi menjadi merah delima menyala dan sangat jernih.</li>
+            <li><strong>Fenomena Degradasi Termal:</strong> Jika pemanasan dilanjutkan di atas 80&deg;C atau dibiarkan mendidih bergolak (100&deg;C), warna merah delima perlahan memudar menjadi cokelat keruh kehitaman dengan endapan halus.</li>
+            <li><strong>Sensitivitas Bio-Indikator:</strong> Ekstrak secang yang ditetesi air perasan jeruk nipis (asam) seketika memudar menjadi kuning jingga muda, sedangkan bila ditetesi air kapur (basa) berubah menjadi merah tua keunguan pekat.</li>
+          </ul>
+        </div>
+
+        <!-- Level 2: Submikroskopik -->
+        <div class="triad-card spotlight-card">
+          <div class="triad-card-header">
+            <div class="triad-icon-box sub">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
+            </div>
+            <div>
+              <h3>Level 2: Submikroskopik (Dunia Molekuler &amp; Ikatan Kimia)</h3>
+              <small>Mekanisme partikel atomik, pemutusan ikatan kovalen, dan eksitasi elektron pi (&pi;)</small>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+            <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--ink-primary);">
+              <li><strong>Senyawa Alami Awal (Brazilin):</strong> Brazilin (C<sub>16</sub>H<sub>14</sub>O<sub>5</sub>) adalah homoisoflavonoid yang tidak berwarna atau kuning pucat karena sistem ikatan terkonjugasinya belum penuh.</li>
+              <li><strong>Oksidasi Menjadi Brazilein:</strong> Selama ekstraksi dengan adanya oksigen terlarut (O<sub>2</sub>), cincin heterosiklik piran mengalami oksidasi spontan dengan melepaskan 2 proton (2H<sup>+</sup>) dan 2 elektron (2e<sup>-</sup>).</li>
+              <li><strong>Pembentukan Kromofor Kuinon:</strong> Terbentuk struktur brazilein (C<sub>16</sub>H<sub>12</sub>O<sub>5</sub>) berkromofor kuinon planar terkonjugasi penuh. Resonansi elektron pi (&pi; &rarr; &pi;*) menyerap foton cahaya biru (&sim;446 nm) dan memantulkan warna merah delima.</li>
+              <li><strong>Termolabilitas pada Suhu Tinggi:</strong> Suhu di atas 80&deg;C melampaui energi aktivasi dekomposisi termal, memecah cincin piran brazilein dan memicu polimerisasi kondensasi fenolik menjadi pigmen cokelat tak aktif.</li>
+            </ul>
+            <div class="figure-box" style="margin: 0;">
+              <img src="assets/bab2/struktur_brazilin_brazilein.jpg" alt="Mekanisme Oksidasi Brazilin ke Brazilein" style="max-height: 220px; width: 100%; object-fit: contain;">
+              <p class="figure-caption">Struktur molekul Brazilin (kiri) teroksidasi menjadi Brazilein berkromofor Kuinon (kanan).</p>
+            </div>
+          </div>
+
+          <!-- Simulator Interaktif Resonansi & Oksidasi Molekuler -->
+          <div class="mol-explorer-card spotlight-card">
+            <div class="mol-header-row">
+              <div>
+                <strong style="color: var(--secang-950); font-size: 0.95rem;">Eksplorasi Perubahan Struktur Molekul &amp; Resonansi Elektron &pi;</strong>
+                <p style="font-size: 0.8rem; color: var(--ink-secondary); margin: 0.2rem 0 0;">Klik tombol di samping untuk mengamati perbedaan konfigurasi ikatan kovalen &amp; spektrum:</p>
+              </div>
+              <div class="mol-toggle-group">
+                <button type="button" class="mol-toggle-btn" id="btnMolBrazilin" onclick="app.toggleMolecule('brazilin')">1. Bentuk Tereduksi (Brazilin)</button>
+                <button type="button" class="mol-toggle-btn active" id="btnMolBrazilein" onclick="app.toggleMolecule('brazilein')">2. Bentuk Teroksidasi (Brazilein)</button>
+              </div>
+            </div>
+
+            <div class="mol-display-stage">
+              <div class="mol-svg-wrapper" id="molSvgContainer">
+                <!-- Dynamic SVG will be rendered here -->
+              </div>
+              <div class="mol-info-panel" id="molInfoPanel">
+                <!-- Dynamic details rendered here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 3: Simbolik -->
+        <div class="triad-card spotlight-card tilt-3d-card">
+          <div class="triad-card-header">
+            <div class="triad-icon-box symbol">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+            </div>
+            <div>
+              <h3>Level 3: Simbolik (Persamaan Reaksi &amp; Pemodelan Kuantitatif)</h3>
+              <small>Notasi matematika, persamaan stoikiometri redoks, dan formulasi spektroskopi</small>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.15rem; font-size: 0.88rem;">
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.15rem;">
+              <strong style="color: var(--secang-900); font-size: 0.92rem;">1. Persamaan Stoikiometri Redoks Oksidasi:</strong>
+              <div class="chem-eq-display" style="margin: 0.6rem 0; font-size: 0.85rem; justify-content: flex-start; padding: 0.65rem 0.85rem;">
+                <span>C<sub>16</sub>H<sub>14</sub>O<sub>5(aq)</sub></span>
+                <span class="math-op">+</span>
+                <span>&frac12; O<sub>2(aq)</sub></span>
+                <span class="chem-arrow">
+                  <span class="chem-arrow-label">&Delta;</span>
+                  <span>&rarr;</span>
+                </span>
+                <span>C<sub>16</sub>H<sub>12</sub>O<sub>5(aq)</sub></span>
+                <span class="math-op">+</span>
+                <span>H<sub>2</sub>O<sub>(l)</sub></span>
+              </div>
+              <small style="color: var(--ink-secondary); display: block; line-height: 1.4;">
+                Transformasi <em>brazilin</em> (kuning muda) menjadi <em>brazilein</em> (merah pekat berkromofor kuinon planar terkonjugasi penuh).
+              </small>
+            </div>
+
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.15rem;">
+              <strong style="color: var(--secang-900); font-size: 0.92rem;">2. Hukum Serapan Cahaya (Lambert-Beer):</strong>
+              <div class="math-display" style="margin: 0.6rem 0; font-size: 0.95rem; justify-content: flex-start; color: #1e3a8a; padding: 0.65rem 0.85rem;">
+                <span class="math-var">A</span>
+                <span class="math-op">=</span>
+                <span>&minus;log(<span class="math-var">T</span>)</span>
+                <span class="math-op">=</span>
+                <span class="math-var">&epsilon;</span>
+                <span class="math-op">&times;</span>
+                <span class="math-var">b</span>
+                <span class="math-op">&times;</span>
+                <span class="math-var">C</span>
+              </div>
+              <small style="color: var(--ink-secondary); display: block; line-height: 1.4;">
+                <em>A</em>: Absorbansi optik, <em>&epsilon;</em>: koefisien absorptivitas molar (L&middot;mol<sup>&minus;1</sup>&middot;cm<sup>&minus;1</sup>), <em>b</em>: tebal kuvet (1 cm), <em>C</em>: konsentrasi (mol/L).
+              </small>
+            </div>
+
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.15rem;">
+              <strong style="color: var(--secang-900); font-size: 0.92rem;">3. Persamaan Rendemen Gravimetri:</strong>
+              <div class="math-display" style="margin: 0.6rem 0; font-size: 0.95rem; justify-content: flex-start; color: #15803d; padding: 0.65rem 0.85rem;">
+                <span class="math-var">% Rendemen</span>
+                <span class="math-op">=</span>
+                <span class="math-frac">
+                  <span class="math-frac-num"><span class="math-var">W<sub>ekstrak</sub></span></span>
+                  <span class="math-frac-den"><span class="math-var">W<sub>simplisia</sub></span></span>
+                </span>
+                <span class="math-op">&times;</span>
+                <span>100%</span>
+              </div>
+              <small style="color: var(--ink-secondary); display: block; line-height: 1.4;">
+                Perolehan rendemen optimum tercatat pada suhu 60&deg;C sebesar 13,85% (akuades) dan 15,95% (bio-etanol).
+              </small>
+            </div>
+
+            <div style="background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: var(--radius-xs); padding: 1.15rem;">
+              <strong style="color: var(--secang-900); font-size: 0.92rem;">4. Kinetika Degradasi Termal (Arrhenius):</strong>
+              <div class="math-display" style="margin: 0.6rem 0; font-size: 0.92rem; justify-content: flex-start; color: #b91c1c; padding: 0.65rem 0.85rem;">
+                <span>ln</span>
+                <span class="math-frac">
+                  <span class="math-frac-num"><span class="math-var">C<sub>t</sub></span></span>
+                  <span class="math-frac-den"><span class="math-var">C<sub>0</sub></span></span>
+                </span>
+                <span class="math-op">=</span>
+                <span>&minus;<span class="math-var">k</span> &times; <span class="math-var">t</span></span>
+                <span class="math-op">;</span>
+                <span style="margin-left: 0.4rem;"><span class="math-var">k</span> = <span class="math-var">A<sub>0</sub></span> &times; <span class="math-var">e</span><sup>&minus;(<span class="math-var">E<sub>a</sub></span> / <span class="math-var">RT</span>)</sup></span>
+              </div>
+              <small style="color: var(--ink-secondary); display: block; line-height: 1.4;">
+                Menggambarkan konstanta laju pemudaran warna (<em>k</em>) akibat kerusakan termal cincin kuinon pada suhu &gt;80&deg;C.
+              </small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TAB 4: ETNOSAINS BATIK ================= -->
+    <section id="tab-ethno" class="tab-pane" role="tabpanel">
+      <div style="max-width: 1020px; margin: 0 auto;">
+
+        <div class="triad-header-banner">
+          <h2>Etnosains &amp; Rekonstruksi Epistemologis Batik</h2>
+          <p style="font-size: 0.95rem; color: var(--ink-secondary); max-width: 780px; margin: 0 auto;">
+            Menjembatani pengetahuan asli masyarakat (*indigenous science*) yang diwariskan turun-temurun oleh para empu perajin batik nusantara menjadi sains kimia ilmiah (*scientific science*).
+          </p>
+        </div>
+
+        <!-- Profil Narasumber & Wawancara Etnografi -->
+        <div class="spotlight-card tilt-3d-card" style="background: var(--surface-card); border: 1px solid var(--border-parchment); border-radius: var(--radius-md); padding: 1.85rem; margin-bottom: 2rem; box-shadow: var(--shadow-warm-sm);">
+          <div style="display: flex; gap: 1.15rem; align-items: center; margin-bottom: 1.25rem;">
+            <div style="width: 52px; height: 52px; background: var(--secang-850); color: #eed6b3; border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; font-family: 'Playfair Display', Georgia, serif;">
+              M
+            </div>
+            <div>
+              <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--secang-950);">Narasumber: Bp. Mulyadi (Perajin Batik Pewarna Alami)</h3>
+              <p style="font-size: 0.82rem; color: var(--ink-muted);">Lokasi Penelitian Etnografi: Sentra Kerajinan Pewarna Alam Tradisional Jawa Tengah</p>
+            </div>
+          </div>
+          <div class="ethnographic-quote" style="margin: 0;">
+            "Serutan teras kayu secang yang baik berwarna jingga kemerahan tua. Untuk merebusnya, satu kuali serutan &plusmn;500 gram dilarutkan dalam 5 liter air. Kunci utamanya adalah menjaga bara api sedang agar suhunya hangat mantap dan tidak bergolak mendidih terlalu liar. Kalau terlalu mendidih, sari merahnya akan 'mati' dan berubah butek kecokelatan. Sebelum dipakai, perajin biasa meneteskan air jeruk nipis atau air kapur untuk menguji kepekatan sari warna. Di tahap akhir pewarnaan kain, fiksasi dengan air tawas akan memunculkan warna merah muda lembut yang tidak mudah luntur saat dicuci."
+          </div>
+        </div>
+
+        <!-- Matriks Rekonstruksi Epistemologis -->
+        <div class="spotlight-card" style="background: var(--surface-card); border-radius: var(--radius-md); border: 1px solid var(--border-parchment); padding: 2rem; box-shadow: var(--shadow-warm-sm);">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--secang-950); margin-bottom: 1rem;">
+            Matriks Rekonstruksi Epistemologis: Tradisi Perajin vs Sains Ilmiah Kimia
+          </h3>
+
+          <div class="custom-table-wrapper">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th style="width: 170px;">Tahapan Tradisi</th>
+                  <th>Pengetahuan Asli Perajin (<em>Indigenous Science</em>)</th>
+                  <th>Penjelasan Sains Ilmiah Kimia (<em>Scientific Science</em>)</th>
+                  <th style="width: 180px;">Konsep Materi Kimia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Pemilihan Bahan</strong></td>
+                  <td>Menggunakan bagian dalam teras kayu yang berwarna merah tua, bukan kulit atau kayu muda.</td>
+                  <td>Teras kayu tua (*heartwood*) mengakumulasi metabolit sekunder brazilin dengan konsentrasi tertinggi dibanding gubal muda.</td>
+                  <td>Kimia bahan alam, biosintesis metabolit sekunder.</td>
+                </tr>
+                <tr>
+                  <td><strong>2. Pengecilan Ukuran</strong></td>
+                  <td>Kayu dirajang tipis memanjang menjadi serutan sebelum dimasukkan kuali.</td>
+                  <td>Memperluas luas permukaan antarmuka padatan-cair dan memperpendek jarak difusi partikel pelarut menembus selulosa.</td>
+                  <td>Kinetika pelarutan, luas bidang sentuh, laju difusi Fick.</td>
+                </tr>
+                <tr>
+                  <td><strong>3. Perebusan Suhu Terkontrol</strong></td>
+                  <td>Menggunakan nyala api sedang agar larutan tidak mendidih meluap terlalu berlebih.</td>
+                  <td>Suhu optimum 60&deg;C memaksimalkan ekstraksi; suhu berlebih (&gt;80&deg;C) memicu degradasi termolabil cincin piran brazilein.</td>
+                  <td>Termodinamika, kestabilan termal senyawa organik.</td>
+                </tr>
+                <tr>
+                  <td><strong>4. Evolusi Warna Merah</strong></td>
+                  <td>Air rebusan yang awalnya kuning lambat laun berubah menjadi merah delima pekat.</td>
+                  <td>Terjadi reaksi oksidasi non-enzimatik brazilin oleh O<sub>2</sub> terlarut membentuk kromofor kuinon terkonjugasi penuh.</td>
+                  <td>Reaksi redoks, resonansi elektron &pi; &rarr; &pi;*, kromofor.</td>
+                </tr>
+                <tr>
+                  <td><strong>5. Uji Tetes Asam/Basa</strong></td>
+                  <td>Meneteskan air jeruk (kuning muda) atau air abu/kapur (merah keunguan pekat).</td>
+                  <td>Respon molekul brazilein sebagai bio-indikator alami: terprotonasi dalam asam dan terdeprotonasi resonansi dalam basa.</td>
+                  <td>Kesetimbangan asam-basa, bio-indikator alami, efek batokromik.</td>
+                </tr>
+                <tr>
+                  <td><strong>6. Fiksasi Tawas &amp; Kapur</strong></td>
+                  <td>Membilas kain dengan air tawas agar warna awet, atau kapur agar berwarna gelap.</td>
+                  <td>Ion Al<sup>3+</sup> membentuk ikatan koordinasi khelat stabil dengan gugus fenol; Ca<sup>2+</sup> memicu pengendapan kompleks basa.</td>
+                  <td>Kimia koordinasi, kompleks khelat logam, ikatan hidrogen.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Expanding Accordion Gallery (Garry Audie / 21st.dev / Framer Motion 2026 Style) -->
+        <div class="expanding-showcase-section">
+          <div class="expanding-showcase-header">
+            <div>
+              <span class="badge badge-secang" style="margin-bottom: 0.35rem; display: inline-flex;">Galeri Interaktif 2026</span>
+              <h3 style="margin: 0;">Respon Spektral &amp; Fiksasi Khelasi Pewarna Secang</h3>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--ink-secondary); margin: 0; max-width: 380px;">
+              Arahkan kursor atau ketuk kartu untuk mengekspansi data interaksi ligan dan pergeseran batokromik molekuler.
+            </p>
+          </div>
+
+          <div class="expanding-cards-grid" id="mordantExpandingGrid">
+            <!-- Card 1: Tawas (Default Active) -->
+            <div class="expand-card active spotlight-card" data-mordant="alum" onclick="window.activateExpandCard(this)">
+              <div class="card-floating-swatch" style="background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);"></div>
+              <div class="card-collapsed-label">1. MORDAN TAWAS (Al³⁺)</div>
+              <div class="card-expanded-content">
+                <div class="expand-tag-row">
+                  <span class="card-badge" style="background: rgba(244,63,94,0.15); color: #be123c; border-color: rgba(244,63,94,0.3);">KOORDINASI OKTAHEDRAL</span>
+                  <span class="card-badge" style="background: rgba(34,197,94,0.12); color: #15803d; border-color: rgba(34,197,94,0.25);">TAHAN LUNTUR TINGGI</span>
+                </div>
+                <h4 class="expand-card-title">Mordan Tawas (Al<sup>3+</sup>)</h4>
+                <div class="expand-card-desc">
+                  Ion Al<sup>3+</sup> bertindak sebagai asam Lewis kuat yang menerima pasangan elektron bebas dari gugus hidroksil fenolik dan gugus karbonil kuinon brazilein, membentuk senyawa kompleks sepit (khelat) bi- atau tridentat yang mengunci pigmen ke serat selulosa kain batik.
+                </div>
+                <div class="expand-card-chem">Kompleks: [Al(C<sub>16</sub>H<sub>11</sub>O<sub>5</sub>)<sub>2</sub>]<sup>+</sup> &bull; Warna: Merah Scarlet (&lambda;<sub>maks</sub> 446 nm)</div>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;" onclick="event.stopPropagation(); app.testMordant('alum');">
+                  Lihat Simulasi Khelat &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2: Kapur Tohor -->
+            <div class="expand-card spotlight-card" data-mordant="lime" onclick="window.activateExpandCard(this)">
+              <div class="card-floating-swatch" style="background: linear-gradient(135deg, #831843 0%, #500724 100%);"></div>
+              <div class="card-collapsed-label">2. MORDAN KAPUR (Ca²⁺)</div>
+              <div class="card-expanded-content">
+                <div class="expand-tag-row">
+                  <span class="card-badge" style="background: rgba(131,24,67,0.15); color: #831843; border-color: rgba(131,24,67,0.3);">EFEK BATOKROMIK</span>
+                  <span class="card-badge" style="background: rgba(234,88,12,0.12); color: #c2410c; border-color: rgba(234,88,12,0.25);">pH BASA (11.2)</span>
+                </div>
+                <h4 class="expand-card-title">Mordan Air Kapur (Ca<sup>2+</sup>)</h4>
+                <div class="expand-card-desc">
+                  Suasana alkali Ca(OH)<sub>2</sub> mendeprotonasi proton fenolik brazilein menjadi ion fenolat. Delokalisasi elektron &pi; meluas sepanjang cincin aromatik terkonjugasi (efek batokromik / red shift), menghasilkan warna ungu marun pekat khas batik keraton Surakarta.
+                </div>
+                <div class="expand-card-chem">Spesies: Ca(C<sub>16</sub>H<sub>11</sub>O<sub>5</sub>)<sub>2</sub> &bull; Warna: Ungu Marun / Deep Purple</div>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;" onclick="event.stopPropagation(); app.testMordant('lime');">
+                  Lihat Simulasi Khelat &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3: Tunjung / Besi -->
+            <div class="expand-card spotlight-card" data-mordant="iron" onclick="window.activateExpandCard(this)">
+              <div class="card-floating-swatch" style="background: linear-gradient(135deg, #475569 0%, #1e293b 100%);"></div>
+              <div class="card-collapsed-label">3. MORDAN TUNJUNG (Fe²⁺)</div>
+              <div class="card-expanded-content">
+                <div class="expand-tag-row">
+                  <span class="card-badge" style="background: rgba(71,85,105,0.15); color: #334155; border-color: rgba(71,85,105,0.3);">LIGAND-TO-METAL CT</span>
+                  <span class="card-badge" style="background: rgba(15,23,42,0.12); color: #0f172a; border-color: rgba(15,23,42,0.25);">WARNA ARKEOLOGIS</span>
+                </div>
+                <h4 class="expand-card-title">Mordan Tunjung (Fe<sup>2+</sup> / Fe<sup>3+</sup>)</h4>
+                <div class="expand-card-desc">
+                  Mordan tradisional ferro sulfat (tunjung) menyumbangkan orbital d kosong. Terjadi transfer muatan ligand-to-metal (LMCT) yang menyerap hampir seluruh spektrum sinar tampak secara homogen, menghasilkan nuansa warna cokelat tembaga pekat hingga kehitaman.
+                </div>
+                <div class="expand-card-chem">Kompleks: [Fe(C<sub>16</sub>H<sub>11</sub>O<sub>5</sub>)<sub>3</sub>] &bull; Warna: Cokelat Kehitaman / Obsidian</div>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;" onclick="event.stopPropagation(); app.testMordant('plain');">
+                  Lihat Spektrum Serapan &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 4: Asam Sitrat -->
+            <div class="expand-card spotlight-card" data-mordant="acid" onclick="window.activateExpandCard(this)">
+              <div class="card-floating-swatch" style="background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);"></div>
+              <div class="card-collapsed-label">4. UJI ASAM (Jeruk Nipis)</div>
+              <div class="card-expanded-content">
+                <div class="expand-tag-row">
+                  <span class="card-badge" style="background: rgba(245,158,11,0.15); color: #b45309; border-color: rgba(245,158,11,0.3);">EFEK HIPSOKROMIK</span>
+                  <span class="card-badge" style="background: rgba(59,130,246,0.12); color: #1d4ed8; border-color: rgba(59,130,246,0.25);">BIO-INDIKATOR ALAMI</span>
+                </div>
+                <h4 class="expand-card-title">Asam Sitrat / Jeruk Nipis (H<sup>+</sup>)</h4>
+                <div class="expand-card-desc">
+                  Penambahan ion hidronium (H<sup>+</sup>) memicu protonasi gugus karbonil kuinon, memperpendek panjang resonansi konjugasi elektron &pi; (pergeseran hipsokromik / blue shift). Warna larutan seketika bertransisi dari merah menyala menjadi kuning jingga keemasan.
+                </div>
+                <div class="expand-card-chem">Spesies: [C<sub>16</sub>H<sub>13</sub>O<sub>5</sub>]<sup>+</sup> &bull; Warna: Kuning Amber (pH &lt; 4.0)</div>
+                <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;" onclick="event.stopPropagation(); app.testMordant('acid');">
+                  Lihat Simulasi Khelat &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TAB 5: KUIS EVALUASI HOTS ================= -->
+    <section id="tab-quiz" class="tab-pane" role="tabpanel">
+      <div style="max-width: 820px; margin: 0 auto;">
+
+        <div class="triad-header-banner">
+          <h2>Evaluasi Pemahaman Kognitif &amp; HOTS</h2>
+          <p style="font-size: 0.95rem; color: var(--ink-secondary); max-width: 700px; margin: 0 auto;">
+            Uji pemahaman mendalam Anda mengenai termolabilitas brazilin-brazilein, spektroskopi UV-Vis, dan prinsip kimia hijau.
+          </p>
+        </div>
+
+        <div id="quizContainer">
+          <!-- Quiz Questions generated by JavaScript -->
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button id="btnSubmitQuiz" class="btn btn-primary" style="padding: 0.85rem 2.25rem; font-size: 0.95rem;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Periksa Jawaban &amp; Tampilkan Skor</span>
+          </button>
+        </div>
+
+        <div id="quizResultBox" style="display: none; margin-top: 2rem; background: var(--surface-card); border-radius: var(--radius-md); border: 1px solid var(--border-gold); padding: 2.25rem; text-align: center; box-shadow: var(--shadow-warm-md);">
+          <h3 id="quizScoreText" style="font-size: 1.6rem; font-weight: 800; color: var(--secang-900);">Skor Anda: 0 / 100</h3>
+          <p id="quizScoreFeedback" style="font-size: 0.95rem; color: var(--ink-secondary); margin-top: 0.5rem;"></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TAB 6: PANDUAN GURU ================= -->
+    <section id="tab-teacher" class="tab-pane" role="tabpanel">
+      <div style="max-width: 1020px; margin: 0 auto;">
+
+        <div class="triad-header-banner">
+          <h2>Panduan Pembelajaran &amp; Rubrik Penilaian Guru</h2>
+          <p style="font-size: 0.95rem; color: var(--ink-secondary); max-width: 780px; margin: 0 auto;">
+            Pedoman bagi pendidik dalam menyelenggarakan praktikum kimia bahan alam berbasis etnosains skala mikro di sekolah.
+          </p>
+        </div>
+
+        <!-- Panduan Pelaksanaan -->
+        <div style="background: var(--surface-card); border-radius: var(--radius-md); border: 1px solid var(--border-parchment); padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-warm-sm);">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--secang-900); margin-bottom: 1rem;">
+            1. Petunjuk Praktikum Kimia Hijau Skala Mikro di Sekolah
+          </h3>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem; color: var(--ink-primary);">
+            Praktikum ini dirancang dengan prinsip <strong>Kimia Hijau (Green Chemistry)</strong> sehingga sangat aman, hemat biaya, dan tidak menghasilkan limbah B3 beracun. Jika laboratorium sekolah tidak memiliki spektrofotometer UV-Vis, pengamatan nilai intensitas warna dapat dikonversi menggunakan aplikasi <em>Color Picker Smartphone</em> (seperti RGB Color Detector) dengan mengukur nilai koordinat RGB/Hexa larutan pada wadah bening berlatar belakang putih seragam.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; font-size: 0.88rem;">
+            <div style="background: var(--surface-paper); padding: 1.15rem; border-radius: var(--radius-xs); border: 1px solid var(--border-parchment);">
+              <strong style="color: var(--secang-900);">Alat Sederhana Pengganti:</strong>
+              <ul style="margin-left: 1.25rem; margin-top: 0.4rem; color: var(--ink-secondary);">
+                <li>Gelas beker 100 mL atau toples kaca tahan panas</li>
+                <li>Penangas air sederhana (panci berisi air di atas kompor listrik/bunsen)</li>
+                <li>Termometer laboratorium skala 0–100&deg;C</li>
+                <li>Kain mori batik polos ukuran 5&times;5 cm</li>
+              </ul>
+            </div>
+            <div style="background: var(--surface-paper); padding: 1.15rem; border-radius: var(--radius-xs); border: 1px solid var(--border-parchment);">
+              <strong style="color: var(--secang-900);">Bahan Alami Mudah Didapat:</strong>
+              <ul style="margin-left: 1.25rem; margin-top: 0.4rem; color: var(--ink-secondary);">
+                <li>Serutan teras kayu secang (pasar tradisional / toko rempah)</li>
+                <li>Akuades atau air minum kemasan demineral</li>
+                <li>Batu tawas (penjernih air / deodoran alami)</li>
+                <li>Kapur sirih dan perasan jeruk nipis segar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rubrik Penilaian -->
+        <div style="background: var(--surface-card); border-radius: var(--radius-md); border: 1px solid var(--border-parchment); padding: 2rem; box-shadow: var(--shadow-warm-sm);">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--secang-900); margin-bottom: 1rem;">
+            2. Rubrik Penilaian Kinerja &amp; Laporan Penyelidikan E-LKPD
+          </h3>
+
+          <div class="custom-table-wrapper">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th style="width: 180px;">Aspek Penilaian</th>
+                  <th>Skor 4 (Sangat Baik)</th>
+                  <th>Skor 3 (Baik)</th>
+                  <th>Skor 2 (Cukup)</th>
+                  <th>Skor 1 (Kurang)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Perumusan Masalah &amp; Hipotesis</strong></td>
+                  <td>Menyusun rumusan masalah dan hipotesis kausalitas yang sangat tepat dan dapat diuji secara empiris.</td>
+                  <td>Rumusan masalah dan hipotesis sudah sesuai namun kalimat kurang spesifik.</td>
+                  <td>Hipotesis kurang berorientasi pada hubungan antarvariabel.</td>
+                  <td>Tidak merumuskan masalah dan hipotesis dengan benar.</td>
+                </tr>
+                <tr>
+                  <td><strong>2. Keterampilan Eksperimen / Simulasi</strong></td>
+                  <td>Mengatur variabel secara tepat, mencatat data akurat, dan mengulangi pengukuran secara sistematis.</td>
+                  <td>Melakukan eksperimen dengan baik namun terdapat ketidaktelitian kecil pada data.</td>
+                  <td>Kurang teliti dalam mengontrol variabel suhu dan waktu ekstraksi.</td>
+                  <td>Prosedur tidak dijalankan sesuai protokol keselamatan.</td>
+                </tr>
+                <tr>
+                  <td><strong>3. Analisis Triad Representasi</strong></td>
+                  <td>Mampu mengintegrasikan level makroskopik, submikroskopik kromofor kuinon, dan simbolik secara komprehensif.</td>
+                  <td>Mampu menjelaskan dua tingkatan representasi dengan benar.</td>
+                  <td>Hanya mampu mendeskripsikan aspek makroskopik secara dangkal.</td>
+                  <td>Tidak mampu mengaitkan fenomena warna dengan konsep kimia molekuler.</td>
+                </tr>
+                <tr>
+                  <td><strong>4. Pemikiran Kritis (HOTS) &amp; Refleksi</strong></td>
+                  <td>Memberikan argumen ilmiah yang sangat tajam terkait termolabilitas dan rekonstruksi etnosains perajin batik.</td>
+                  <td>Mampu menjawab pertanyaan analisis dengan konsep yang benar.</td>
+                  <td>Jawaban analisis masih bersifat menyalin materi tanpa penalaran mendalam.</td>
+                  <td>Jawaban tidak sesuai dengan konteks penyelidikan ilmiah.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer style="background: var(--surface-card); border-top: 1px solid var(--border-parchment); padding: 2rem; margin-top: 3.5rem; font-size: 0.82rem; color: var(--ink-secondary); text-align: center;" class="no-print">
+    <div style="max-width: 800px; margin: 0 auto; line-height: 1.7;">
+      <p>
+        <strong>SecangLab &bull; Atelier Etnosains Kimia Bahan Alam</strong> &mdash; Dikembangkan berdasarkan hasil miniriset eksperimental laboratorium Rancangan Acak Lengkap (RAL) Universitas Negeri Semarang (UNNES).
+      </p>
+      <p style="margin-top: 0.35rem; color: var(--ink-muted);">
+        Topik: <em>"Pengaruh Suhu Ekstraksi terhadap Intensitas Warna Ekstrak Kayu Secang sebagai Pewarna Alami"</em>. Dilengkapi Tiga Tingkat Representasi Kimia &amp; Etnopedagogi Batik Nusantara.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE MODAL DIALOG (MORDANT TESTING) ================= -->
+  <div id="mordantModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--secang-700);"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+        <h3 id="modalTitle">Hasil Uji Fiksasi Mordan Batik</h3>
+      </div>
+      <div class="modal-body">
+        <p id="modalDesc"></p>
+
+        <!-- Studio Animasi Pencelupan Kain Mori -->
+        <div class="mordant-cloth-studio">
+          <div class="beaker-dip-apparatus">
+            <div class="cloth-strip-hanging" id="modalClothStrip"></div>
+            <div class="mordant-dip-liquid" id="modalDipLiquid"></div>
+          </div>
+          <div class="fastness-meter-block">
+            <div style="font-size: 0.74rem; font-weight: 700; color: var(--ink-secondary); text-transform: uppercase;">
+              Ketahanan Luntur Pencucian (SNI ISO 105-C06):
+            </div>
+            <div class="fastness-scale-track">
+              <div class="fastness-scale-fill" id="modalFastnessFill" style="width: 85%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--ink-muted); font-family: 'JetBrains Mono', monospace;">
+              <span>Skala 1 (Rendah)</span>
+              <span id="modalFastnessScore" style="font-weight: 700; color: var(--secang-900);">Skala 4-5 (Sangat Baik)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-color-preview">
+          <div id="modalSwatch" class="modal-swatch-box"></div>
+          <div>
+            <div style="font-size: 0.76rem; font-weight: 700; color: var(--ink-muted); text-transform: uppercase;">Warna Hasil Kain Mori:</div>
+            <div id="modalColorName" style="font-weight: 700; color: var(--secang-900); font-size: 0.95rem;"></div>
+          </div>
+        </div>
+
+        <div id="modalChemEquation" style="margin-top: 0.85rem; padding: 0.75rem; background: var(--surface-paper); border: 1px solid var(--border-parchment); border-radius: 4px; font-size: 0.82rem; font-family: 'JetBrains Mono', monospace; color: var(--secang-950);">
+          <!-- Formula populated dynamically -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="modalCloseBtn">
+          Tutup &amp; Lanjutkan Eksplorasi
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CELEBRATION CONFETTI CANVAS ================= -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ================= FLOATING TOAST NOTICE ================= -->
+  <div id="toastNotice" class="toast-notice">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#f7c980;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span id="toastMessage">Data berhasil disimpan</span>
+  </div>
+
+  <!-- ================= FLOATING QUICK ACTION DOCK ================= -->
+  <button class="btn-floating-top no-print" id="btnFloatingTop" title="Kembali ke atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
