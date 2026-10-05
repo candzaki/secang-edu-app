@@ -1,18 +1,33 @@
 {
   "name": "secang-edu-app",
   "version": "1.0.0",
-  "description": "Aplikasi Pembelajaran Kimia Interaktif & Lembar Kerja Peserta Didik (LKPD) Digital berbasis Etnosains Pewarna Alami Batik Nusantara dan Riset Laboratorium Terstandar (RAL Faktorial Universitas Negeri Semarang).",
+  "description": "SecangLab & E-LKPD Etnosains Kimia: Aplikasi Media Pembelajaran Interaktif Ekstraksi Kayu Secang (Caesalpinia sappan L.) Berbasis Etnosains Pewarna Alami Batik Nusantara.",
   "main": "app.js",
+  "homepage": "https://candzaki.github.io/secang-edu-app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candzaki/secang-edu-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/candzaki/secang-edu-app/issues"
+  },
+  "author": "candzaki <https://github.com/candzaki>",
+  "license": "MIT",
   "scripts": {
     "start": "python3 -m http.server 3000",
-    "dev": "python3 -m http.server 3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "python3 -m http.server 3000"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "playwright": "^1.63.0"
-  }
+  "keywords": [
+    "etnosains",
+    "kimia",
+    "secang",
+    "caesalpinia-sappan",
+    "brazilein",
+    "brazilin",
+    "batik",
+    "e-lkpd",
+    "spektrofotometri",
+    "education-app",
+    "unnes"
+  ]
 }
