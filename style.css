@@ -11,23 +11,25 @@
   --secang-900: #480a11;
   --secang-850: #5c0d17;
   --secang-800: #73101d;
-  --secang-700: #8f1525; /* Brazilian Ruby Core */
+  --secang-700: #8f1525;
+  /* Brazilian Ruby Core */
   --secang-600: #aa1b2d;
   --secang-500: #c52439;
   --secang-400: #dc3e52;
   --secang-200: #f8c5cc;
   --secang-100: #fde8eb;
-  --secang-50:  #fff5f6;
+  --secang-50: #fff5f6;
 
   /* Natural Amber Wood & Brass (Kuali Tradisional) */
   --amber-900: #451a03;
   --amber-800: #78350f;
   --amber-700: #92400e;
   --amber-600: #b45309;
-  --amber-500: #d97706; /* Brazilin Gold/Amber */
+  --amber-500: #d97706;
+  /* Brazilin Gold/Amber */
   --amber-400: #f59e0b;
   --amber-100: #fef3c7;
-  --amber-50:  #fffbeb;
+  --amber-50: #fffbeb;
 
   /* Botanical Earth & Indigo (Mordan & Alam) */
   --botanical-800: #192e24;
@@ -36,22 +38,29 @@
   --botanical-100: #e4efe9;
 
   /* Paper / Parchment Linen Canvas */
-  --canvas-bg: #faf7f2;       /* Natural warm linen */
+  --canvas-bg: #faf7f2;
+  /* Natural warm linen */
   --surface-card: #ffffff;
-  --surface-paper: #fdfbf7;    /* Subtle warm paper */
-  --surface-subtle: #f5f0e6;   /* Aged archival paper */
+  --surface-paper: #fdfbf7;
+  /* Subtle warm paper */
+  --surface-subtle: #f5f0e6;
+  /* Aged archival paper */
   --border-parchment: #e6ded3;
   --border-strong: #d5c8b8;
   --border-gold: #c8a86b;
 
   /* Editorial Inks */
-  --ink-primary: #211516;     /* Deep warm charcoal */
-  --ink-secondary: #4a383a;   /* Espresso ink */
-  --ink-muted: #7d6b6d;       /* Archival pencil */
+  --ink-primary: #211516;
+  /* Deep warm charcoal */
+  --ink-secondary: #4a383a;
+  /* Espresso ink */
+  --ink-muted: #7d6b6d;
+  /* Archival pencil */
   --ink-faint: #ad9e9f;
 
   /* Scientific Accents */
-  --accent-science: #1e3a8a;  /* Monochromator Blue */
+  --accent-science: #1e3a8a;
+  /* Monochromator Blue */
   --accent-cyan: #0284c7;
   --accent-success: #15803d;
   --accent-warning: #b45309;
@@ -77,7 +86,9 @@
 }
 
 /* --- RESET & GLOBAL BASE --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -106,7 +117,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background-image: 
+  background-image:
     radial-gradient(ellipse at 15% 0%, rgba(143, 21, 37, 0.035) 0%, transparent 45%),
     radial-gradient(ellipse at 85% 100%, rgba(180, 83, 9, 0.03) 0%, transparent 45%),
     linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
@@ -115,7 +126,10 @@ body {
 }
 
 /* Typography Enhancements */
-h1, h2, h3, .font-serif {
+h1,
+h2,
+h3,
+.font-serif {
   font-family: var(--font-serif);
   font-feature-settings: 'liga', 'clig', 'kern';
   color: var(--ink-primary);
@@ -393,6 +407,7 @@ h1, h2, h3, .font-serif {
     opacity: 0;
     transform: translateY(10px) scale(0.995);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -401,7 +416,7 @@ h1, h2, h3, .font-serif {
 
 /* Hero Section (Etnobotani & Cultural Heritage Canvas) */
 .hero-card {
-  background: 
+  background:
     linear-gradient(145deg, #32070c 0%, #520b13 40%, #75101e 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
@@ -419,7 +434,7 @@ h1, h2, h3, .font-serif {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.15) 0%, transparent 35%),
-                    radial-gradient(circle at 90% 80%, rgba(197, 155, 39, 0.15) 0%, transparent 40%);
+    radial-gradient(circle at 90% 80%, rgba(197, 155, 39, 0.15) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -1249,7 +1264,7 @@ textarea.form-control {
   color: var(--ink-secondary);
 }
 
-.pill-option input:checked + .pill-label {
+.pill-option input:checked+.pill-label {
   background: var(--secang-50);
   border-color: var(--secang-700);
   color: var(--secang-900);
@@ -1295,9 +1310,9 @@ textarea.form-control {
   align-items: center;
   padding-top: 14px;
   border: 2px solid #8c9baebd;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.7), 
-              inset 0 -4px 8px rgba(0, 0, 0, 0.15),
-              0 10px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.7),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.15),
+    0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Digital LED Instrument Display */
@@ -1390,9 +1405,17 @@ textarea.form-control {
 }
 
 @keyframes swirl {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-28px) rotate(180deg); }
-  100% { transform: translateY(0) rotate(360deg); }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-28px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
 }
 
 .flask-status-pill {
@@ -1746,7 +1769,8 @@ canvas#spectrumChart {
 .video-player-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
   height: 0;
   border-radius: var(--radius-xs);
   overflow: hidden;
@@ -2109,7 +2133,8 @@ canvas#spectrumChart {
   }
 
   /* Reset body dan html */
-  html, body {
+  html,
+  body {
     background: #ffffff !important;
     color: #111111 !important;
     font-size: 9.5pt !important;
@@ -2232,7 +2257,8 @@ canvas#spectrumChart {
     color: #444444 !important;
   }
 
-  .subject-line, .topic-line {
+  .subject-line,
+  .topic-line {
     font-size: 8.5pt !important;
     text-align: center !important;
     color: #222222 !important;
@@ -2301,7 +2327,8 @@ canvas#spectrumChart {
   }
 
   /* Kotak Penjelasan & Panduan (Scaffolding Box) */
-  .info-callout, .scaffolding-box {
+  .info-callout,
+  .scaffolding-box {
     border: 1px solid #c9bbae !important;
     background: #faf7f2 !important;
     padding: 8px 12px !important;
@@ -2484,7 +2511,8 @@ canvas#spectrumChart {
   }
 
   /* Format Isian Form & Input */
-  input.form-control, input.table-input {
+  input.form-control,
+  input.table-input {
     border: none !important;
     border-bottom: 1px dotted #333333 !important;
     background: transparent !important;
@@ -2589,14 +2617,17 @@ canvas#spectrumChart {
     width: 8px;
     height: 8px;
   }
+
   ::-webkit-scrollbar-track {
     background: var(--surface-paper);
   }
+
   ::-webkit-scrollbar-thumb {
     background: #d5c8b8;
     border-radius: 4px;
     border: 2px solid var(--surface-paper);
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: #b8a692;
   }
@@ -2647,6 +2678,7 @@ canvas#spectrumChart {
 
 /* Mobile Devices & Small Tablets (<= 768px: Android & iOS Phones) */
 @media (max-width: 768px) {
+
   /* Safe Area Insets for iOS & Android */
   .site-header {
     padding-top: max(env(safe-area-inset-top), 0px);
@@ -2724,7 +2756,8 @@ canvas#spectrumChart {
 
   .header-actions .btn {
     justify-content: center;
-    min-height: 44px; /* Touch target minimum */
+    min-height: 44px;
+    /* Touch target minimum */
     padding: 0.55rem 0.65rem;
     font-size: 0.8rem;
   }
@@ -2814,7 +2847,8 @@ canvas#spectrumChart {
     font-size: 0.68rem;
   }
 
-  .subject-line, .topic-line {
+  .subject-line,
+  .topic-line {
     font-size: 0.78rem;
     line-height: 1.45;
   }
@@ -2825,7 +2859,8 @@ canvas#spectrumChart {
   }
 
   /* Form Inputs (16px base prevents iOS Safari Auto-Zoom) */
-  .form-control, .table-input {
+  .form-control,
+  .table-input {
     font-size: 16px !important;
     min-height: 44px;
     padding: 0.55rem 0.75rem;
@@ -2847,7 +2882,8 @@ canvas#spectrumChart {
     font-size: 0.82rem;
   }
 
-  .custom-table th, .custom-table td {
+  .custom-table th,
+  .custom-table td {
     padding: 0.55rem 0.7rem;
   }
 
@@ -2989,7 +3025,7 @@ canvas#spectrumChart {
     align-items: center;
   }
 
-  .video-reference-card .video-info > div {
+  .video-reference-card .video-info>div {
     justify-content: center;
   }
 
@@ -3065,6 +3101,7 @@ canvas#spectrumChart {
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -3232,13 +3269,11 @@ canvas#spectrumChart {
   right: 2px;
   bottom: 24px;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    180deg,
-    #64748b 0,
-    #64748b 1px,
-    transparent 1px,
-    transparent 16px
-  );
+  background: repeating-linear-gradient(180deg,
+      #64748b 0,
+      #64748b 1px,
+      transparent 1px,
+      transparent 16px);
   opacity: 0.6;
 }
 
@@ -3278,11 +3313,25 @@ canvas#spectrumChart {
 }
 
 @keyframes stirSpin {
-  0% { transform: scaleX(1); }
-  25% { transform: scaleX(0.2); }
-  50% { transform: scaleX(1); }
-  75% { transform: scaleX(0.2); }
-  100% { transform: scaleX(1); }
+  0% {
+    transform: scaleX(1);
+  }
+
+  25% {
+    transform: scaleX(0.2);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+
+  75% {
+    transform: scaleX(0.2);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 /* Simmering Bubbles Container */
@@ -3308,9 +3357,11 @@ canvas#spectrumChart {
     transform: translateY(0) scale(0.6);
     opacity: 0;
   }
+
   30% {
     opacity: 0.8;
   }
+
   100% {
     transform: translateY(-90px) scale(1.2);
     opacity: 0;
@@ -3351,6 +3402,7 @@ canvas#spectrumChart {
     transform: translateY(0) scale(0.8);
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(-38px) scale(2.2);
     opacity: 0;
@@ -3544,8 +3596,13 @@ canvas#spectrumChart {
 }
 
 @keyframes clothDip {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(32px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(32px);
+  }
 }
 
 .fastness-meter-block {
@@ -3586,12 +3643,14 @@ canvas#spectrumChart {
   .tab-pane.active {
     animation: none;
   }
+
   .stir-bar,
   .simmer-bubble,
   .steam-wisp,
   .cloth-strip-hanging {
     animation: none !important;
   }
+
   .progress-bar-fill,
   .mercury-column,
   .fastness-scale-fill {
@@ -3641,8 +3700,13 @@ canvas#spectrumChart {
 }
 
 @keyframes marqueeScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .atelier-marquee:hover .marquee-track {
@@ -3674,7 +3738,9 @@ canvas#spectrumChart {
   }
 }
 
-.hero-meta, .hero-title, .hero-description {
+.hero-meta,
+.hero-title,
+.hero-description {
   position: relative;
   z-index: 2;
 }
@@ -3715,8 +3781,17 @@ canvas#spectrumChart {
 }
 
 @keyframes hudPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
 }
 
 /* 3. Expanding Accordion Cards Showcase (Apple / Garry Audie / 21st.dev style) */
@@ -3787,6 +3862,7 @@ canvas#spectrumChart {
     height: auto !important;
     min-height: 76px !important;
   }
+
   .expand-card.active {
     min-height: auto !important;
   }
@@ -3796,12 +3872,15 @@ canvas#spectrumChart {
 .expand-card[data-mordant="alum"] {
   background: radial-gradient(circle at 80% 20%, #ffe4e6 0%, #fff1f2 50%, #ffffff 100%);
 }
+
 .expand-card[data-mordant="lime"] {
   background: radial-gradient(circle at 80% 20%, #fce7f3 0%, #fdf2f8 50%, #ffffff 100%);
 }
+
 .expand-card[data-mordant="iron"] {
   background: radial-gradient(circle at 80% 20%, #ede9fe 0%, #f5f3ff 50%, #ffffff 100%);
 }
+
 .expand-card[data-mordant="acid"] {
   background: radial-gradient(circle at 80% 20%, #fef3c7 0%, #fffbeb 50%, #ffffff 100%);
 }
@@ -4034,9 +4113,17 @@ canvas#spectrumChart {
 }
 
 @keyframes eqWave {
-  0% { height: 25%; }
-  50% { height: 100%; }
-  100% { height: 40%; }
+  0% {
+    height: 25%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  100% {
+    height: 40%;
+  }
 }
 
 /* 7. Floating Quick-Action Top Dock */
